@@ -9,6 +9,9 @@ module.exports = function(defaults) {
       app: {
         css: {
           'app': '/assets/forli.css'
+        },
+        font: {
+          'app': '/assets/fonts/'
         }
       }
     },
@@ -20,7 +23,7 @@ module.exports = function(defaults) {
     'ember-bootstrap': {
       'bootstrapVersion': 3,
       'importBootstrapFont': true,
-      'importBootstrapCSS': false
+      'importBootstrapCSS': true
     }
   });
 
