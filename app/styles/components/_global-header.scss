@@ -1,0 +1,47 @@
+.global-header {
+  width: 100%;
+  background: #FFF;
+  height: 50px;
+  position: fixed;
+  z-index: 99999;
+  top: 0px;
+}
+
+.header-strip {
+  width: 100%;
+  height: 5px;
+  position: fixed;
+  top: 50px;
+  background-image: linear-gradient(to right, #4a90e2, #ee598e);
+  box-shadow: inset 0 -0.5px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  color: #656e8a;
+  font-size: 14px;
+  text-transform: uppercase;
+  float: left;
+  padding: 17px 0px 17px 30px;
+}
+
+.nav-user-info {
+  float: right;
+  padding: 10px;
+  .item {
+    display: inline-block;
+    padding-right: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  .user-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    border: 1px solid #CCC;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+}

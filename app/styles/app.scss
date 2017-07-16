@@ -1,39 +1,28 @@
-// @import "ember-bootstrap/bootstrap";
+// All files are included in 'common/_includes.scss'
 
-@font-face {
-    font-family: 'avenir-regular';
-    src: url('fonts/avenir-next-regular.eot');
-    src:url("fonts/avenir-next-regular.eot?") format("eot"),
-	  url("fonts/avenir-next-regular.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'avenir-thin';
-    src: url('fonts/avenir-next-thin.eot');
-    src:url("fonts/avenir-next-thin.eot?") format("eot"),
-	  url("fonts/avenir-next-regular.thin") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'avenir-bold';
-    src: url('fonts/avenir-next-bold.eot');
-    src:url("fonts/avenir-next-bold.eot?") format("eot"),
-	  url("fonts/avenir-next-bold.woff") format("woff");
-    font-weight: 600;
-    font-style: normal;
-}
+@import "includes";
 
 html, body {
-  background: #FFF;
+  background: #f7f8f9;
   height: 100%;
   width: 100%;
   padding: 0;
   margin: 0;
-  color: #333;
+  color: $app-color;
   font-size: 14px;
   font-family: 'avenir-regular', sans-serif;
+}
+
+.text-bold {
+  font-family: 'avenir-bold', sans-serif;
+}
+.text-caps {
+  text-transform: uppercase;
+}
+
+.app-wrapper {
+  position: relative;
+  height: 200px;
+  background: cornsilk;
+  margin-top: 55px;
 }

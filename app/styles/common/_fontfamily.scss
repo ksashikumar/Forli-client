@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'avenir-regular';
+    src: url('fonts/avenir-next-regular.eot');
+    src:url("fonts/avenir-next-regular.eot?") format("eot"),
+	  url("fonts/avenir-next-regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'avenir-thin';
+    src: url('fonts/avenir-next-thin.eot');
+    src:url("fonts/avenir-next-thin.eot?") format("eot"),
+	  url("fonts/avenir-next-regular.thin") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'avenir-bold';
+    src: url('fonts/avenir-next-bold.eot');
+    src:url("fonts/avenir-next-bold.eot?") format("eot"),
+	  url("fonts/avenir-next-bold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+}
