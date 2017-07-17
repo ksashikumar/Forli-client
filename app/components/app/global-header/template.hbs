@@ -1,17 +1,27 @@
-<div class="global-header">
-  <div class="holder">
-    <div class="text-bold logo">Falcon</div>
-    <div class="nav-user-info">
-      <div class="item search-con">
-        <div>{{svg-jar "search" class="icon" width="30px"}}</div>
-      </div>
-      <div class="item">
-        <div class="user-pic"><img src="/assets/images/tom.jpeg" /> </div>
-      </div>
-      <div class="item searchIcon">
-        {{svg-jar "add" class="icon" width="25px"}}
-      </div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Forli</a>
     </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right navbar-icons">
+        <li><a href="#">{{svg-jar "search" class="icon" width="25px" height="25px"}}</a></li>
+        <li><a href="#">{{svg-jar "add" class="icon" width="25px" height="25px"}}</a></li>
+        <li><a href="#"><img class="user-avatar" src="/assets/images/tom.jpeg" width="25" height="25" /></a></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
   </div>
-  <div class="header-strip"></div>
-</div>
+  <!-- /.container-fluid -->
+  <div class="navbar-border"></div>
+</nav>
