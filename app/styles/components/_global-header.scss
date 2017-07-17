@@ -1,25 +1,20 @@
-.navbar-default {
-  background: #fff;
-  border: 0;
-  .navbar-brand {
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    color: #656e8a;
-  }
-  .navbar-border {
-    height: 4px;
-    background-image: linear-gradient(to right, #4a90e2, #ee598e);
-  }
-  .navbar-icons {
-    li {
-      a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
-    }
-    img.user-avatar {
-      border-radius: 50%;
-    }
-  }
+.toolbar-bottom {
+  height: 6px;
+  background-image: linear-gradient(to right, #4a90e2, #ee598e);
 }
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar) {
+  background-color: #fff;
+  color: #656e8a;
+
+  md-icon {
+    color: #656e8a;
+    fill: #fff;
+  }
+
+  // .md-button[disabled] md-icon {
+  //   color: '{{primary-contrast-0.26}}';
+  //   fill: '{{primary-contrast-0.26}}';
+  // }
+}
+
