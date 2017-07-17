@@ -1,0 +1,17 @@
+<!--  TODO Need to wrap all content generated through the froala-editor in {{froala-content}} component
+
+      REFER https://www.froala.com/wysiwyg-editor/docs/options
+      http://froala.github.io/ember-froala-editor/#/components/froala-editor
+
+-->
+
+{{froala-editor
+  content=content
+  options=(hash
+    heightMin=200
+    heightMax=500
+    toolbarInline=toolbarInline
+    direction=direction
+  )
+  update=(action (mut content))
+}}

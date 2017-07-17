@@ -8,9 +8,11 @@
     {{#paper-button iconButton=true}}
       {{paper-icon "search"}}
     {{/paper-button}}
-    {{#paper-button iconButton=true}}
-      {{paper-icon "add_circle"}}
-    {{/paper-button}}
+    {{#link-to 'new'}}
+      {{#paper-button iconButton=true}}
+        {{paper-icon "add_circle"}}
+      {{/paper-button}}
+    {{/link-to}}
     {{#paper-button iconButton=true}}
       {{paper-icon "account_circle"}}
     {{/paper-button}}
