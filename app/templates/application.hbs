@@ -1,6 +1,7 @@
 {{#app/app-container}}
   {{app/global-header}}
-  <div class="app-wrapper">
+  {{app/side-bar routeName=(concat 'sidebar-state-' currentRouteName)}}
+  <div class="app-wrapper router-{{currentRouteName}}">
     {{outlet}}
   </div>
 {{/app/app-container}}
