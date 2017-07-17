@@ -1,0 +1,21 @@
+.tag-container {
+  .tag {
+    background-color: #e7faec;
+    color: #00c633;
+    border: 1px #bdf1cb solid;
+    padding: 2px 5px;
+    display: inline-block;
+    margin-right: 7px;
+    border-radius: 3px;
+    font-size: 11px;
+  }
+}
+
+.m-5 {
+  margin-bottom: 5px;
+}
+
+.display-inline {
+  display: inline-block;
+  vertical-align: middle;
+}
