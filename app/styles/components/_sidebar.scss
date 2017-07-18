@@ -5,6 +5,11 @@
   height: 100%;
   z-index: 99999;
   display: none;
+  box-shadow: 5px 10px 15px 5px rgba(96, 97, 190,.1);
+  &.sidebar-state-index {
+    box-shadow: none;
+    display: block;
+  }
 }
 md-list-item.md-3-line, md-list-item.md-3-line > .md-no-style {
   min-height: 20px;
@@ -13,7 +18,11 @@ md-list-item.md-3-line, md-list-item.md-3-line > .md-no-style {
   a {
     display: block;
     margin: 16px 32px;
-    font-weight: 600;
+  }
+  button {
+    display: block;
+    width: 90%;
+    font-weight: 600;    
   }
 }
 .md-subheader .md-subheader-content {

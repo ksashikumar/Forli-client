@@ -18,6 +18,8 @@
   {{/paper-list}}
   
   <div class="ask-btn-wrapper">
-  {{#paper-button raised=true primary=true href="/ask"}}Ask Question{{/paper-button}}
+  {{#link-to 'ask'}}
+    {{#paper-button raised=true primary=true}}Ask Question{{/paper-button}}
+  {{/link-to}}
   </div>
 </div>
