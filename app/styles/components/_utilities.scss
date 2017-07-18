@@ -47,10 +47,22 @@
   display: block;
 }
 
-.router-index {
-  margin-left: 240px;
-}
-
 .sidebar-state-index {
   display: block;
+}
+
+.text-thin {
+  font-weight: 300 !important;
+}
+
+.text-semibold {
+  font-weight: 600 !important;
+}
+
+.text-bold {
+  font-weight: 700 !important;
+}
+
+.text-caps {
+  text-transform: uppercase;
 }

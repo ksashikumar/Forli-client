@@ -7,7 +7,7 @@ body {
   margin: 0;
   color: #333;
   font-size: 14px;
-  font-family: 'avenir-regular', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -22,21 +22,12 @@ a {
   }
 }
 
-.text-semibold {
-  font-family: 'avenir-regular', sans-serif;
-  font-weight: 600 !important;
-}
-
-.text-bold {
-  font-family: 'avenir-bold', sans-serif;
-}
-
-.text-caps {
-  text-transform: uppercase;
-}
-
 .app-wrapper {
   position: relative;
   padding: 20px;
   margin: 0 auto;
+}
+
+.router-index {
+  margin-left: 240px;
 }

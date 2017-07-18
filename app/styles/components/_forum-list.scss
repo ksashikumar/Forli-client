@@ -33,14 +33,14 @@
       max-width: 25%;
       display: inline-block;
       vertical-align: middle;
-      float: right;
 
       .listinfo-holder {
         .item {
           padding-top: 2px;
           padding-bottom: 2px;
         }
-        margin-right: 30px;
+        margin-right: 32px;
+        margin-left: 16px;
       }
     }
   }
@@ -68,11 +68,9 @@
          color: #656e8a;
     font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.3px;
   }
 
   .list-like-count {
-    font-weight: 600;
     color: rgba(101, 110, 138, 0.55);
     font-size: 12px;
   }
