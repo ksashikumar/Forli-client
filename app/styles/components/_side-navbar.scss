@@ -1,9 +1,28 @@
 .side-navbar {
   position: fixed;
-  width: 200px;
+  width: 240px;
   background: #FFF;
   height: 100%;
   z-index: 99999;
-  padding: 20px;
   display: none;
+}
+md-list-item.md-3-line, md-list-item.md-3-line > .md-no-style {
+  min-height: 20px;
+}
+.ask-btn-wrapper {
+  a {
+    display: block;
+    margin: 16px 32px;
+    font-weight: 600;
+  }
+}
+.md-subheader .md-subheader-content {
+  color: #656e8a;
+    font-weight: 600;
+}
+
+.md-list-item-inner > p, md-list-item .md-list-item-inner > p {
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #959fbb;
 }

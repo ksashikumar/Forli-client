@@ -8,6 +8,18 @@ body {
   color: #333;
   font-size: 14px;
   font-family: 'avenir-regular', sans-serif;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #4990e2;
+  transition: color 0.2s;
+  &:hover {
+    color: #1c61b0;
+  }
 }
 
 .text-semibold {

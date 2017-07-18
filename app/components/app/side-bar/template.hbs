@@ -1,3 +1,23 @@
 <div class="side-navbar {{routeName}}">
-  Side bar content goes here
+  {{#paper-list}}
+    {{#paper-subheader}}Categories{{/paper-subheader}}
+    {{#each categories as |item|}}
+      {{#paper-item class="category"}}
+          <p>{{item.name}}</p>
+      {{/paper-item}}
+    {{/each}}
+    {{#paper-item class="text-link"}}<a href="#">..more</a>{{/paper-item}}
+
+    {{#paper-subheader}}Tags{{/paper-subheader}}
+    {{#each tags as |item|}}
+      {{#paper-item class="tag"}}
+          <p>{{item.name}}</p>
+      {{/paper-item}}
+    {{/each}} 
+    {{#paper-item class="text-link"}}<a href="#">..more</a>{{/paper-item}}
+  {{/paper-list}}
+  
+  <div class="ask-btn-wrapper">
+  {{#paper-button raised=true primary=true href="/ask"}}Ask Question{{/paper-button}}
+  </div>
 </div>
