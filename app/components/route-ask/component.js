@@ -5,4 +5,9 @@ const {
 } = Ember;
 
 export default Component.extend({
+  actions: {
+    basicSubmitAction() {
+
+    }
+  }
 });
