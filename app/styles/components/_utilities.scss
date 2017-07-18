@@ -66,3 +66,9 @@
 .text-caps {
   text-transform: uppercase;
 }
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
