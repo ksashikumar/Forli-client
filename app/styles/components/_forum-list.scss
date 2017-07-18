@@ -1,10 +1,11 @@
 .forum-list {
-  min-height: 100px;
   background: #FFF;
   position: relative;
-  padding: 15px 20px;
-  margin-bottom: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
   box-sizing: border-box;
+  box-shadow: 0 0.5px 0.5px 0 rgba(96, 97, 190, 0.15);
+  border-radius: 3px;
 
   .avatar-holder {
     width: 50px;
@@ -12,7 +13,9 @@
     border-radius: 100%;
     overflow: hidden;
     position: absolute;
-    left:20px;
+    left: 40px;
+    top: 50%;
+    transform: translate(-50%,-50%);
 
     img {
       width: 100%;
@@ -22,7 +25,7 @@
   .holder {
     margin-left: 65px;
     .list-left {
-      max-width: 70%;
+      max-width: 75%;
       display: inline-block;
       vertical-align: middle;
     }
@@ -31,11 +34,11 @@
       display: inline-block;
       vertical-align: middle;
       float: right;
-      margin-top: 15px;
 
       .listinfo-holder {
         .item {
-          padding-bottom: 4px;
+          padding-top: 2px;
+          padding-bottom: 2px;
         }
         margin-right: 30px;
       }
@@ -43,33 +46,42 @@
   }
 
   :hover {
-    .form-list-title {
-      color:#239cff;
-      cursor: pointer;
-    }
+    cursor: pointer;
   }
-
+  .form-list-title {
+    color:#239cff;
+  }
   .form-list-desc {
     font-size: 12px;
-    font-weight: 500;
     text-align: left;
     color: #6f7c87;
   }
 
   .list-caption {
-    color: #6f7c87;
-    padding-right: 5px;
-    font-size: 13px;
+    padding-right: 4px;
+    font-weight: 500;
+    font-size: 12px;
+    color: rgba(101, 110, 138, 0.55);
   }
 
   .list-value {
-     color: #183247;
+         color: #656e8a;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
   }
 
   .list-like-count {
     font-weight: 600;
-    color: #656e8a;
-    font-size: 14px;
+    color: rgba(101, 110, 138, 0.55);
+    font-size: 12px;
+  }
+
+  .list-like-color {
+    md-icon.md-default-theme, md-icon {
+    color: #ff1744 !important;
+      
+    }
   }
 
 }
