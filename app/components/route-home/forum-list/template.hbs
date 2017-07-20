@@ -4,7 +4,7 @@
     <div class="holder layout-row">
       <div class="list-left flex-75">
         {{app/tag-list tagList=tagList}}
-        <div class="form-list-title mt-2 mb-2 text-semibold">{{discussion.title}}</div>
+        <div class="form-list-title mt-2 mb-2 text-semibold ellipsis">{{discussion.title}}</div>
         <div class="form-list-desc ellipsis">{{truncate discussion.description (html-safe discussion.description true)}}</div>
       </div>
       <div class="list-right flex-25">

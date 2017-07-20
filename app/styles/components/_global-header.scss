@@ -6,7 +6,7 @@ header {
 
 .toolbar-bottom {
   height: 4px;
-  background-image: linear-gradient(to right, #4a90e2, #ee598e);
+  background-image: linear-gradient(to right, $app-primary, $app-secondary);
 }
 
 md-toolbar.md-default-theme:not(.md-menu-toolbar) {
@@ -22,4 +22,8 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar) {
   //   color: '{{primary-contrast-0.26}}';
   //   fill: '{{primary-contrast-0.26}}';
   // }
+}
+
+.md-toolbar-tools h1, .md-toolbar-tools h2, .md-toolbar-tools h3 {
+  font-size: 1.125rem;
 }

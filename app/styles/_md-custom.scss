@@ -6,19 +6,20 @@ body {
   padding: 0;
   margin: 0;
   color: #333;
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'Source Sans Pro', sans-serif;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
 a {
+  font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
-  color: #4990e2;
+  color: $app-primary;
   transition: color 0.2s;
   &:hover {
-    color: #1c61b0;
+    color: darken($app-primary, 10%);
   }
 }
 
@@ -27,7 +28,7 @@ button {
 }
 
 md-icon.md-default-theme, md-icon {
-    color: rgba(96, 97, 190,.5);
+    color: rgba($text-light, 0.5); 
 }
 
 .app-wrapper {
