@@ -1,0 +1,55 @@
+.m-loader {
+  font-size: 3px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid #edf2f1;
+  border-right: 1.1em solid #ffc14b;
+  border-bottom: 1.1em solid #ffc14b;
+  border-left: 1.3em solid #edf2f1;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 0.7s infinite linear;
+  animation: load8 0.8s infinite linear;
+  display: inline-block;
+  top: 6px;
+}
+
+.m-miniloader {
+  font-size: 2px;
+}
+
+.m-loader,
+.m-loader::after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+
+.m-spintext {
+  padding-top: 15px;
+}
+// TODO need to change the name of load8
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -11,12 +11,18 @@
 
     <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
     <link rel="stylesheet" href="{{rootURL}}assets/forli.css">
-
+    <style>
+    #pageSpinner{font-size: 20px;position: absolute;margin: auto;right: 0;left: 0;top: 0;bottom: 0;text-align:center;height: 75px;}
+    </style>
     {{content-for "head-footer"}}
   </head>
   <body>
     {{content-for "body"}}
-
+    <div id="pageSpinner">
+      <div class="m-loader"></div>
+      <div class="m-spintext">Welcome to Forli</div>
+      <div class="m-spintext">Please wait, We are setting up everything for you !!!</div>
+    </div>
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/forli.js"></script>
 
