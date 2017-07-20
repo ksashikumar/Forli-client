@@ -5,7 +5,7 @@
       <div class="list-left flex-75">
         {{app/tag-list tagList=tagList}}
         <div class="form-list-title mt-2 mb-2 text-semibold">{{discussion.title}}</div>
-        <div class="form-list-desc ellipsis">{{html-safe (truncate discussion.description descriptionTruncateLimit true)}}</div>
+        <div class="form-list-desc ellipsis">{{truncate discussion.description (html-safe discussion.description true)}}</div>
       </div>
       <div class="list-right flex-25">
         <div class="listinfo-holder display-inline">
@@ -22,9 +22,10 @@
             <span class="list-value">10</span>
           </div>
         </div>
+        {{log 'discussion' discussion.posts}}
         <div class="like-holder display-inline">
             <div class="display-inline list-like-color">{{paper-icon "remove_red_eye" size=18}}</div>
-            <div class="display-inline"><span class="list-like-count">55</span></div>
+            <div class="display-inline"><span class="list-like-count">{{discussion.posts.views}}</span></div>
         </div>
       </div>
     </div>
