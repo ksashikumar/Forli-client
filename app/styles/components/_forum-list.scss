@@ -2,7 +2,7 @@
   background: #FFF;
   position: relative;
   padding: 12px 16px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   box-sizing: border-box;
   box-shadow: 0 0.5px 0.5px 0 rgba(96, 97, 190, 0.15);
   border-radius: 3px;
@@ -38,10 +38,11 @@
 
   :hover {
     cursor: pointer;
+    .form-list-title {
+      color:#239cff;
+    }
   }
-  .form-list-title {
-    color:#239cff;
-  }
+
   .form-list-desc {
     font-size: 12px;
     text-align: left;
@@ -69,7 +70,7 @@
   .list-like-color {
     md-icon.md-default-theme, md-icon {
     opacity: 0.5;
-      
+
     }
   }
 
