@@ -1,7 +1,11 @@
 <div class="route-home">
-  <div class="home-wrapper">
-    <div class="forum-list-wrapper p-4">
-    {{route-home/forum-list}}
+  {{#if (gt discussion.content.length 0) }}
+    <div class="home-wrapper">
+      <div class="forum-list-wrapper p-4">
+      {{route-home/forum-list data=discussion}}
+      </div>
     </div>
-  </div>
+  {{else}}
+    {{app/app-loader level3=true}}
+  {{/if}}
 </div>
