@@ -1,6 +1,6 @@
 {{#each data as |discussion|}}
   <div class="forum-list">
-    <div class="avatar-holder"><img class="user-avatar" src="/assets/images/face.jpg" /></div>
+    {{app/avatar-holder src=discussion.user.image name=discussion.user.name }}
     <div class="holder layout-row">
       <div class="list-left flex-75">
         {{app/tag-list tagList=tagList}}
