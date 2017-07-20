@@ -2,8 +2,8 @@ import Ember from 'ember';
 
 const {
   Component,
-  inject: { service }
-  // get
+  inject: { service },
+  get
 } = Ember;
 
 export default Component.extend({
@@ -20,8 +20,9 @@ export default Component.extend({
         categoryId: '1'
       });
       discussion.save().then(() => {
-        // let router = get(this, 'router');
-        // router.transitionTo(`index.show.${id}`);
+        let router = get(this, 'router');
+        router.transitionTo("index");
+        // router.transitionTo(`forum.show.${id}`);
         // console.log('do success transition', result);
       }).catch(()=>{
         // console.log('do failure process')
