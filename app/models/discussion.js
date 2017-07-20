@@ -7,5 +7,7 @@ export default DS.Model.extend({
   user: attr(),
   tags: attr(),
   categoryId: attr(),
-  posts: attr()
+  posts: attr(),
+  views: attr(),
+  postsCount: attr(),
 });
