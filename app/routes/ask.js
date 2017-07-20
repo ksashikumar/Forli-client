@@ -7,8 +7,6 @@ const {
 export default Route.extend({
 
   model() {
-    return {
-      name: "Sample Object"
-    }
-  }
+    return this.store.findAll('discussion');
+  },
 });

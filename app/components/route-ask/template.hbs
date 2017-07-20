@@ -35,7 +35,9 @@
 <div class="related-wrapper container-wrapper">
   <div class="layout-row layout-xs-column">
   <div class="flex-80 flex-offset-10">
-  {{route-home/forum-list}}
+    {{#if (gt discussion.content.length 0) }}
+      {{route-home/forum-list data=discussion}}
+    {{/if}}
   </div>
   </div>
 </div>
