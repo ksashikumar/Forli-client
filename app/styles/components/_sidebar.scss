@@ -6,6 +6,8 @@
   z-index: 99999;
   display: none;
   box-shadow: 5px 10px 15px 5px rgba(96, 97, 190,.1);
+  margin-top: 68px; // to offset fixed header
+
   &.sidebar-state-index {
     box-shadow: none;
     display: block;

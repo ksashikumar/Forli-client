@@ -1,3 +1,9 @@
+header {
+  position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
 .toolbar-bottom {
   height: 4px;
   background-image: linear-gradient(to right, #4a90e2, #ee598e);
@@ -5,10 +11,10 @@
 
 md-toolbar.md-default-theme:not(.md-menu-toolbar) {
   background-color: #fff;
-  color: #656e8a;
+  color: $text-dark;
 
   md-icon {
-    color: #656e8a;
+    color: $text-dark;
     fill: #fff;
   }
 
