@@ -5,6 +5,7 @@ const {
 } = Ember;
 
 export default Component.extend({
+  tagList: ['JavaScript', 'HTML', 'CSS'],
   actions: {
     basicSubmitAction() {
 

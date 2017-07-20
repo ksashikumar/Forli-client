@@ -1,7 +1,7 @@
 .forum-list {
   background: #FFF;
   position: relative;
-  padding: 16px;
+  padding: 12px 16px;
   margin-bottom: 16px;
   box-sizing: border-box;
   box-shadow: 0 0.5px 0.5px 0 rgba(96, 97, 190, 0.15);
@@ -56,7 +56,7 @@
   }
 
   .list-value {
-         color: #656e8a;
+         color: rgba(101, 110, 138, 0.75);
     font-size: 12px;
     font-weight: 600;
   }
@@ -68,7 +68,7 @@
 
   .list-like-color {
     md-icon.md-default-theme, md-icon {
-    color: #ff1744 !important;
+    opacity: 0.5;
       
     }
   }

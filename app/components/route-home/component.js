@@ -10,6 +10,5 @@ export default Component.extend({
   init() {
     this._super(...arguments);
     let testData = this.get('store').findAll('discussion');
-    console.log('testData', testData);
   }
 });

@@ -1,5 +1,6 @@
+<div class="question-wrapper container-wrapper">
 <div class="layout-row layout-xs-column">
-  <div class="flex-70 flex-offset-15">
+  <div class="flex-80 flex-offset-10">
     {{#paper-form onSubmit=(action "basicSubmitAction") as |form|}}
     <div class="layout-row">
       <div class="layout-column flex">
@@ -9,10 +10,29 @@
     <div class="editor-wrapper">
       {{app/forli-editor}}
     </div>
-    <div class="btn-wrapper">
-      {{#form.submit-button raised=true primary=true}}Submit{{/form.submit-button}}
+
+    <div class="layout-row layout-align-center-center flex mt-4">
+      <div class="flex">
+        <span class="category-title">Suggested Categories</span>
+        {{app/tag-list tagList=tagList class="tags-large"}}
+      </div>
+      <div class="flex">
+        <div class="btn-wrapper text-right">
+          {{#form.submit-button raised=true primary=true class="m-0"}}Ask Question{{/form.submit-button}}
+        </div>
+      </div>
     </div>
+    
     {{/paper-form}}
     
+  </div>
+</div>
+</div>
+
+<div class="related-wrapper container-wrapper">
+  <div class="layout-row layout-xs-column">
+  <div class="flex-80 flex-offset-10">
+  {{route-home/forum-list}}
+  </div>
   </div>
 </div>
