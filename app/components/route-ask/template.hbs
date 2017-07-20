@@ -7,11 +7,11 @@
     {{#paper-form onSubmit=(action "basicSubmitAction") as |form|}}
     <div class="layout-row">
       <div class="layout-column flex">
-      {{form.input label="Title of your question" value=firstName onChange=(action (mut firstName)) required=true}}
+      {{form.input label="Title of your question" value=title onChange=(action (mut title)) required=true}}
       </div>
     </div>
     <div class="editor-wrapper">
-      {{app/forli-editor}}
+      {{app/forli-editor content=editorContent}}
     </div>
 
     <div class="layout-row layout-align-center-center flex mt-4">
