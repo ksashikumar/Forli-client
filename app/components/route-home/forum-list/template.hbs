@@ -5,7 +5,7 @@
       <div class="list-left flex-75">
         {{app/tag-list tagList=tagList}}
         <div class="form-list-title mt-2 mb-2 text-semibold">{{discussion.title}}</div>
-        <div class="form-list-desc ellipsis">{{truncate discussion.description descriptionTruncateLimit true}}</div>
+        <div class="form-list-desc ellipsis">{{html-safe (truncate discussion.description descriptionTruncateLimit true)}}</div>
       </div>
       <div class="list-right flex-25">
         <div class="listinfo-holder display-inline">
