@@ -10,6 +10,22 @@
     box-shadow: none;
     display: block;
   }
+
+  .md-subheader .md-subheader-inner {
+    padding: 12px 20px;
+  }
+
+  md-list-item.md-no-proxy, md-list-item .md-no-style {
+    padding: 0px 32px;
+  }
+
+  md-list-item, md-list-item .md-list-item-inner {
+    min-height: 32px;
+  }
+
+  md-list-item::before, md-list-item .md-list-item-inner::before {
+    min-height: 32px;
+  }
 }
 md-list-item.md-3-line, md-list-item.md-3-line > .md-no-style {
   min-height: 20px;
