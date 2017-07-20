@@ -8,7 +8,6 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('ask');
-  this.route('new');
 });
 
 export default Router;
