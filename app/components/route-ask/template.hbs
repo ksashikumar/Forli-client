@@ -1,6 +1,9 @@
 <div class="question-wrapper container-wrapper">
 <div class="layout-row layout-xs-column">
   <div class="flex-80 flex-offset-10">
+    <div class="author-wrapper">
+      {{app/author-bio}}
+    </div>
     {{#paper-form onSubmit=(action "basicSubmitAction") as |form|}}
     <div class="layout-row">
       <div class="layout-column flex">

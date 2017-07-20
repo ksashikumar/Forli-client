@@ -26,10 +26,10 @@ md-list-item.md-3-line, md-list-item.md-3-line > .md-no-style {
   }
 }
 .md-subheader .md-subheader-content {
-  color: #656e8a;
+  color: $text-dark;
     font-weight: 600;
 }
 
 .md-list-item-inner > p, md-list-item .md-list-item-inner > p {
-    color: #959fbb;
+    color: $text-light;
 }
