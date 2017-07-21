@@ -2,7 +2,7 @@
 <div class="layout-row layout-xs-column">
   <div class="flex-80 flex-offset-10">
     <div class="author-wrapper">
-      {{app/author-bio}}
+      {{app/author-bio user=userInfo.data}}
     </div>
     {{#paper-form onSubmit=(action "basicSubmitAction") as |form|}}
     <div class="layout-row">
@@ -16,8 +16,15 @@
 
     <div class="layout-row layout-align-center-center flex mt-4">
       <div class="flex">
-        <span class="category-title">Suggested Categories</span>
-        {{app/tag-list tagList=tagList class="tags-large"}}
+        <h3 class="name text-semibold">Add Tags</h3>
+        {{#paper-chips
+          readOnly=readOnly
+          removeItem=(action "removeCustomItem")
+          addItem=(action "addCustomItem")
+          placeholder="Add a tag"
+          content=tags as |item|}}
+          <div>{{item}}</div>
+        {{/paper-chips}}
       </div>
       <div class="flex">
         <div class="btn-wrapper text-right">

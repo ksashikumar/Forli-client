@@ -39,7 +39,7 @@
     "ember-font-awesome": "^3.0.5",
     "ember-froala-editor": "^2.6.2",
     "ember-load-initializers": "^1.0.0",
-    "ember-paper": "^1.0.0-alpha.20",
+    "ember-paper": "1.0.0-alpha.20",
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.13.0",
     "ember-svg-jar": "^0.10.3",
