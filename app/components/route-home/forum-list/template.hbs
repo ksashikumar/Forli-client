@@ -14,8 +14,8 @@
             <span class="list-value">{{discussion.user.name}}</span>
           </div>
           <div class="item">
-            <span class="list-caption">Date:</span>
-            <span class="list-value">Apr 1, 01:30 PM</span>
+            <span class="list-caption">Create At:</span>
+            <span class="list-value">{{moment-format discussion.createdAt 'MMM-DD-YY, hh:mm A'}}</span>
           </div>
           <div class="item">
             <span class="list-caption">Answers:</span>

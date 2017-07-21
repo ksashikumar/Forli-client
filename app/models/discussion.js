@@ -11,4 +11,6 @@ export default DS.Model.extend({
   posts: attr(),
   views: attr(),
   postsCount: attr(),
+  createdAt: attr(),
+  updatedAt: attr(),
 });
