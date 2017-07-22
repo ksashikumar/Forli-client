@@ -4,32 +4,30 @@
       <div class="author-wrapper">
         {{app/author-bio user=userInfo.data}}
       </div>
-      
-      {{#paper-form onSubmit=(action "basicSubmitAction") as |form|}}
-      <div class="layout-row">
-        <div class="layout-column flex">
-          {{form.input label="Title of your question" value=title onChange=(action (mut title)) required=true}}
+      <div class="ask-question-wrapper">
+        <div class="layout-row">
+          <div class="layout-column flex">
+            <span>Title</span>
+            {{input type="text" class="input-title" label="Title of your question" value=title onChange=(action (mut title))}}
+          </div>
         </div>
-      </div>
-      <div class="editor-wrapper">
-        {{app/forli-editor content=editorContent}}
-      </div>
-
-      <div class="layout-row layout-align-center-center flex mt-4">
-        <div class="flex">
-          <span>Tags</span> {{#paper-chips readOnly=readOnly removeItem=(action "removeCustomItem") addItem=(action "addCustomItem")
-          placeholder="Add a tag" content=tags as |item|}}
-          <div>{{item}}</div>
-          {{/paper-chips}}
+        <div class="editor-wrapper">
+          {{app/forli-editor content=editorContent}}
         </div>
-        <div class="flex">
-          <div class="btn-wrapper text-right">
-            {{#form.submit-button raised=true primary=true class="m-0"}}Ask Question{{/form.submit-button}}
+        <div class="layout-row layout-align-center-center flex mt-4">
+          <div class="flex">
+            <span>Tags</span> {{#paper-chips readOnly=readOnly removeItem=(action "removeCustomItem") addItem=(action "addCustomItem")
+            placeholder="Add a tag" content=tags as |item|}}
+            <div>{{item}}</div>
+            {{/paper-chips}}
+          </div>
+          <div class="flex">
+            <div class="btn-wrapper text-right">
+              {{#paper-button raised=true onClick=(action "basicSubmitAction")}}Ask question{{/paper-button}}
+            </div>
           </div>
         </div>
       </div>
-      {{/paper-form}}
-
     </div>
   </div>
 </div>
@@ -37,7 +35,7 @@
 <div class="related-wrapper container-wrapper">
   <div class="layout-row layout-xs-column">
     <div class="flex-80 flex-offset-10">
-      {{#if (gt discussion.content.length 0) }} {{route-home/forum-list data=discussion}} {{/if}}
+      {{!-- {{#if (gt discussion.content.length 0) }} {{route-home/forum-list data=discussion}} {{/if}} --}}
     </div>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <div class="tag-container {{class}}">
   {{#if (gt tagList.length 0) }}
   {{#each tagList as |tag|}}
-    <div class="tag text-semibold list-tag-{{tag.color}}">{{tag.name}}</div>
+    <div class="tag text-semibold list-tag-{{mod tag.id 10}}">{{tag.name}}</div>
   {{/each}}
   {{else}}
     <div class="tag tag-disabled text-semibold">Untagged</div>
