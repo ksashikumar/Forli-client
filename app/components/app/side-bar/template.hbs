@@ -4,13 +4,15 @@
     {{#if tags}}
       {{#each tags as |item|}}
         {{#paper-item class="tag"}}
-          <p class="tag-item tag-{{item.color}}">{{item.name}}</p>
+          {{#link-to "index" (query-params tag_ids=item.id)}}<p class="tag-item tag-{{item.color}}">{{item.name}}</p>{{/link-to}}
         {{/paper-item}}
       {{/each}}
     {{else}}
       {{app/app-loader level1=true}}
     {{/if}}
-    {{#paper-item class="text-link"}}<a href="#">..more</a>{{/paper-item}}
+    {{#if (gt meta.count limit)}}
+      {{#paper-item class="text-link"}}{{#link-to 'tag-list'}}..more{{/link-to}}{{/paper-item}}
+    {{/if}}
   {{/paper-list}}
   <div class="ask-btn-wrapper">
   {{#link-to 'ask'}}

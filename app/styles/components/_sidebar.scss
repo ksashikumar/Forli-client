@@ -7,6 +7,7 @@
   display: none;
   box-shadow: 5px 10px 15px 5px rgba(96, 97, 190,.1);
   margin-top: 68px; // to offset fixed header
+  overflow-y: scroll;
 
   &.sidebar-state-index {
     box-shadow: none;
@@ -27,6 +28,12 @@
 
   md-list-item::before, md-list-item .md-list-item-inner::before {
     min-height: 32px;
+  }
+  a,
+  a:hover,
+  a:focus,
+  a:visited {
+    color: $text-light;
   }
 }
 md-list-item.md-3-line, md-list-item.md-3-line > .md-no-style {
@@ -56,4 +63,7 @@ md-list-item.md-3-line, md-list-item.md-3-line > .md-no-style {
 .tag-item {
   padding-left: 10px;
   border-left: 2px solid $app-primary;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin: 0px;
 }

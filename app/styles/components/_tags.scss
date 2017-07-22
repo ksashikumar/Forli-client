@@ -46,3 +46,17 @@
 //   height: 20px;
 //   height: 14px;
 // }
+
+.tag-detailsList {
+  padding: 40px;
+  color: #FFF;
+  display: inline-block;
+  margin: 10px;
+
+  a,
+  a:hover,
+  a:focus,
+  a:visited {
+    color: #FFF;
+  }
+}

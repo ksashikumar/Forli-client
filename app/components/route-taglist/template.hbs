@@ -1,0 +1,11 @@
+<div class="discussion-wrapper container-wrapper">
+  <div class="layout-row layout-xs-column">
+    <div class="flex-80 flex-offset-10">
+      {{#each tags as |item|}}
+        <div class="tag-detailsList list-tag-{{item.color}}">
+          {{#link-to "index" (query-params tag_ids=item.id)}}{{item.name}}{{/link-to}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
