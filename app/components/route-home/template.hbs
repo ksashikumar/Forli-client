@@ -2,13 +2,6 @@
   {{#if discussion.isLoaded}}
     {{#if (gt discussion.content.length 0) }}
       <div class="home-wrapper">
-        <div class="filter-list-wrapper p-2">
-          <ul class="filter-list">
-            <li><a class="active">Latest</a></li>
-            <li><a>Popular</a></li>
-            <li><a>Unanswered</a></li>
-          </ul>
-        </div>
         <div class="forum-list-wrapper p-3">
         {{route-home/forum-list data=discussion}}
         </div>
