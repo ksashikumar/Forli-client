@@ -1,5 +1,9 @@
 <div class="tag-container m-5 {{class}}">
+  {{#if (gt tagList.length 0) }}
   {{#each tagList as |tag|}}
-    <div class="tag text-semibold">{{tag}}</div>
+    <div class="tag text-semibold">{{tag.name}}</div>
   {{/each}}
+  {{else}}
+    <div class="tag tag-disabled text-semibold">Untagged</div>
+  {{/if }}
 </div>

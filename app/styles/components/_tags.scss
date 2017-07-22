@@ -1,13 +1,19 @@
 .tag-container {
   display: inline-block;
   .tag {
-    padding: 2px 4px;
+    padding: 1px 4px;
     display: inline-block;
     margin-right: 4px;
     border-radius: 2px;
     font-size: 10px;
-    background-color: #ffc14b;
+    background-color: $app-tags;
+    border: 1px solid $app-tags;
     color: #fff;
+  }
+  .tag-disabled {
+    background-color: #fff;
+    color: $text-light;
+    border-color: $text-light;
   }
 }
 

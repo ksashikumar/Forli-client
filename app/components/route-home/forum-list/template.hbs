@@ -3,7 +3,7 @@
     {{app/avatar-holder src=discussion.user.image name=discussion.user.name }}
     <div class="holder layout-row">
       <div class="list-left flex-75">
-        {{app/tag-list tagList=tagList}}
+        {{app/tag-list tagList=discussion.tags}}
         <div class="form-list-title mt-2 mb-2 text-semibold ellipsis">{{#link-to 'discussion' discussion.id}}{{discussion.title}}{{/link-to}}</div>
         <div class="form-list-desc ellipsis">{{truncate discussion.description (html-safe discussion.description true)}}</div>
       </div>
