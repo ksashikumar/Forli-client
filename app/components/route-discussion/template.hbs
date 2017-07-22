@@ -1,17 +1,15 @@
 <div class="discussion-wrapper container-wrapper">
   <div class="layout-row layout-xs-column">
     <div class="flex-80 flex-offset-10">
-      <h1 class="text-semibold mb-1">How do JavaScript closures work?</h1>
+      <h1 class="text-semibold mb-1">{{discussion.title}}</h1>
       <div class="author-wrapper">
         {{app/author-bio user=userInfo.data}}
       </div>
       <div class="description">
-        <p>How would you explain JavaScript closures to someone with a knowledge of the concepts they consist of (for example
-          functions, variables and the like), but does not understand closures themselves? I have seen the Scheme example
-          given on Wikipedia, but unfortunately it did not help.</p>
+        {{{discussion.description}}}
       </div>
-      <div class="tags-wrapper">
-        {{app/tag-list tagList=tagList}}
+      <div class="tags-wrapper pt-3">
+        {{app/tag-list tagList=discussion.tags class="tags-large"}}
       </div>
     </div>
   </div>
