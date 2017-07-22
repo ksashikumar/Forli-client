@@ -1,5 +1,17 @@
 <div class="side-navbar {{routeName}}">
   {{#paper-list}}
+    {{#paper-subheader}}Filter{{/paper-subheader}}
+    {{#paper-item class="tag"}}
+      {{#link-to "index" (query-params filter="latest")}}<p class="tag-item">Latest</p>{{/link-to}}
+    {{/paper-item}}
+    {{#paper-item class="tag"}}
+      {{#link-to "index" (query-params filter="trending")}}<p class="tag-item">Trending</p>{{/link-to}}
+    {{/paper-item}}
+    {{#paper-item class="tag"}}
+      {{#link-to "index" (query-params filter="Unanswered")}}<p class="tag-item">Unanswered</p>{{/link-to}}
+    {{/paper-item}}
+  {{/paper-list}}
+  {{#paper-list}}
     {{#paper-subheader}}Tags{{/paper-subheader}}
     {{#if tags}}
       {{#each tags as |item|}}
