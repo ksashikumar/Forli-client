@@ -33,9 +33,10 @@ export default Component.extend({
         // TODO: If needed, We'll enable this feature
         // categoryId: '1'
       });
-      discussion.save().then(() => {
+      discussion.save().then((result) => {
         let router = get(this, 'router');
-        router.transitionTo("index");
+        let discussionId = result.get('id');
+        router.transitionTo("discussion", discussionId);
         // router.transitionTo(`forum.show.${id}`);
         // console.log('do success transition', result);
       }).catch(()=>{
