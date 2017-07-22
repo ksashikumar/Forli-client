@@ -1,6 +1,7 @@
 .comment {
     border-bottom: 1px solid rgba(0,0,0,0.05);
   .answer {
+    position: relative;
     margin-left: 3.5rem;
     font-size: 0.875rem;
     line-height: 1.5;
@@ -17,6 +18,11 @@
     }
     h3 {
       font-size: 1rem;
+    }
+    .vote-wrapper {
+      position: absolute;
+    top: 0;
+    left: -3rem;
     }
   }
 }

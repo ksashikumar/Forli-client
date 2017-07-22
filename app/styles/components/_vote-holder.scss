@@ -1,0 +1,22 @@
+.vote-container {
+    display: inline-block;
+    a {
+        display: block;
+        &.vote-up.voted {
+            md-icon.md-default-theme, md-icon {
+                color: $app-success;
+            }
+        }
+        &.vote-down.voted {
+            md-icon.md-default-theme, md-icon {
+                color: $app-danger;
+            }
+        }
+    }
+    .vote-count {
+        text-align: center;
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: $text-dark;
+    }
+}
