@@ -1,6 +1,7 @@
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 import { hasMany } from 'ember-data/relationships';
+import { memberAction } from 'ember-api-actions';
 
 export default Model.extend({
   title: attr('string'),
@@ -14,4 +15,5 @@ export default Model.extend({
   postsCount: attr(),
   createdAt: attr(),
   updatedAt: attr(),
+  similar: memberAction({ path: 'similar' }),
 });

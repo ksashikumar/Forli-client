@@ -1,5 +1,7 @@
-<div class="card flex">
-  <h3>More from "Web Technology"</h3>
-  <h1>How to redirect to another webpage in JavaScript/jQuery?</h1>
-  {{app/author-bio user=cardAuthor}}
+<div class="card-container flex">
+  <div class="card">
+    <h3>{{formattedTag}}</h3>
+    <h1 class="ellipsis">{{discussion.title}}</h1>
+    {{app/author-bio user=discussion.user}}
+  </div>
 </div>

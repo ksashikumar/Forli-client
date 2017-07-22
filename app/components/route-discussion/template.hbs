@@ -1,7 +1,7 @@
 <div class="discussion-wrapper container-wrapper">
   <div class="layout-row layout-xs-column">
     <div class="flex-80 flex-offset-10">
-      <h1 class="text-semibold mb-1">{{discussion.title}}</h1>
+      <h1 class="text-semibold">{{discussion.title}}</h1>
       <div class="author-wrapper">
         {{app/author-bio user=userInfo.data}}
       </div>
@@ -15,20 +15,21 @@
   </div>
 </div>
 
+{{#if (gt relatedQuestions.length 0) }}
 <div class="related-wrapper container-wrapper">
   <div class="layout-row layout-xs-column">
     <div class="flex-80 flex-offset-10">
-      <div class="layout-row flex">
-
-        {{app/card-holder cardAuthor=userInfo.data}}
-        {{app/card-holder cardAuthor=userInfo.data}}
-        {{app/card-holder cardAuthor=userInfo.data}}
-        {{app/card-holder cardAuthor=userInfo.data}}
-
+      <div class="card-wrapper">
+        <div class="layout-row">
+          {{#each relatedQuestions as |relatedQuestion|}}
+            {{app/card-holder discussion=relatedQuestion}}
+          {{/each}}
+        </div>
       </div>
     </div>
   </div>
 </div>
+{{/if}}
 
 <div class="answers-wrapper">
   <div class="answers-banner">
