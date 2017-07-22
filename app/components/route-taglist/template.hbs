@@ -1,11 +1,16 @@
-<div class="discussion-wrapper container-wrapper">
+<div class="tags-wrapper container-wrapper">
   <div class="layout-row layout-xs-column">
     <div class="flex-80 flex-offset-10">
+      <h4 class="text-semibold">Tags</h4>
+      <p>A tag is a keyword or label that categorizes your question with other, similar questions. Using the right tags makes it easier for others to find and answer your question.</p>
+      <div class="tags-container pt-3">
       {{#each tags as |item|}}
         <div class="tag-detailsList list-tag-{{item.color}}">
           {{#link-to "index" (query-params tag_ids=item.id)}}{{item.name}}{{/link-to}}
         </div>
       {{/each}}
+      <div class="tag-detailsList list-tag-default"><a href="#">Load More</a></div>
+      </div>
     </div>
   </div>
 </div>

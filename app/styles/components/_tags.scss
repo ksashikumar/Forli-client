@@ -1,3 +1,17 @@
+.tag-0 { border-left-color: #22A7F0 }; .tag-5 { border-left-color: #CF000F };
+.tag-1 { border-left-color: #26A65B }; .tag-6 { border-left-color: #757D75 };
+.tag-2 { border-left-color: #F3C13A }; .tag-7 { border-left-color: #CF3A24 };
+.tag-3 { border-left-color: #DC3023 }; .tag-8 { border-left-color: #9B59B6 };
+.tag-4 { border-left-color: #F58F84 }; .tag-9 { border-left-color: #4DAF7C };
+
+
+.list-tag-0 { background: #22A7F0; border: 1px solid #22A7F0;}; .list-tag-5 { background: #CF000F; border: 1px solid #CF000F; };
+.list-tag-1 { background: #26A65B; border: 1px solid #26A65B; }; .list-tag-6 { background: #757D75; border: 1px solid #757D75; };
+.list-tag-2 { background: #F3C13A; border: 1px solid #F3C13A; }; .list-tag-7 { background: #CF3A24; border: 1px solid #CF3A24; };
+.list-tag-3 { background: #DC3023; border: 1px solid #DC3023; }; .list-tag-8 { background: #9B59B6; border: 1px solid #9B59B6; };
+.list-tag-4 { background: #F58F84; border: 1px solid #F58F84; }; .list-tag-9 { background: #4DAF7C; border: 1px solid #4DAF7C; };
+
+
 .tag-container {
   display: inline-block;
   .tag {
@@ -23,7 +37,6 @@
 }
 
 // tag style over-ridding
-
 .md-chips.md-removable md-chip {
   background-color: #fff !important;
   color: $app-primary;
@@ -37,26 +50,4 @@
   font-size: 0.875rem !important;
 }
 
-// .md-chip-input-container {
-//   margin-top: 3px !important;
-// }
 
-// .md-chips md-chip .md-chip-remove {
-//   width: 20px;
-//   height: 20px;
-//   height: 14px;
-// }
-
-.tag-detailsList {
-  padding: 40px;
-  color: #FFF;
-  display: inline-block;
-  margin: 10px;
-
-  a,
-  a:hover,
-  a:focus,
-  a:visited {
-    color: #FFF;
-  }
-}
