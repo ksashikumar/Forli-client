@@ -8,7 +8,7 @@
       <div class="description">
         {{{discussion.description}}}
       </div>
-      <div class="tags-wrapper pt-3">
+      <div class="tags-wrapper pt-3 pb-3">
         {{app/tag-list tagList=discussion.tags class="tags-large"}}
       </div>
     </div>
@@ -19,6 +19,7 @@
 <div class="related-wrapper container-wrapper">
   <div class="layout-row layout-xs-column">
     <div class="flex-80 flex-offset-10">
+          <h4 class="container-title">Related Questions</h4>
       <div class="card-wrapper">
         <div class="layout-row">
           {{#each relatedQuestions as |relatedQuestion|}}
