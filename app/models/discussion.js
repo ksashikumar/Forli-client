@@ -1,6 +1,5 @@
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
-import { hasMany } from 'ember-data/relationships';
 import { memberAction } from 'ember-api-actions';
 
 export default Model.extend({
@@ -8,7 +7,7 @@ export default Model.extend({
   description: attr('string'),
   userId: attr(),
   user: attr(),
-  tags: hasMany('tag'),
+  tags: attr(),
   categoryId: attr(),
   posts: attr(),
   views: attr(),
