@@ -6,14 +6,13 @@
     margin-right: 4px;
     border-radius: 2px;
     font-size: 10px;
-    background-color: $app-tags;
-    border: 1px solid $app-tags;
     color: #fff;
   }
   .tag-disabled {
     background-color: #fff;
     color: $text-light;
     border-color: $text-light;
+    border: 1px solid;
   }
   &.tags-large {
     .tag {
@@ -35,7 +34,7 @@
 
 .md-chips md-chip .md-chip-remove md-icon {
   color: $app-primary !important;
-  font-size: 0.875rem !important;  
+  font-size: 0.875rem !important;
 }
 
 // .md-chip-input-container {

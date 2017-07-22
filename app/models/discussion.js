@@ -1,12 +1,13 @@
-import DS from 'ember-data';
+import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
+import { hasMany } from 'ember-data/relationships';
 
-export default DS.Model.extend({
+export default Model.extend({
   title: attr('string'),
   description: attr('string'),
   userId: attr(),
   user: attr(),
-  tags: attr(),
+  tags: hasMany('tag'),
   categoryId: attr(),
   posts: attr(),
   views: attr(),

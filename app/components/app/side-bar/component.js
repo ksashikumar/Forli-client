@@ -1,11 +1,23 @@
 import Ember from 'ember';
+import tagColors from 'forli/constants/tag-colors';
 
-export default Ember.Component.extend({
-    // Fetch categories and tags
-    categories: [{"id":"1", "name":"Programming"},{"id":"2", "name":"Design"},{"id":"3", "name":"Development"},{"id":"4", "name":"Testing"},{"id":"5", "name":"Devops"}],
-    tags: [{"id":"1", "name":"Javascript"},{"id":"2", "name":"Ember"},{"id":"3", "name":"HTML"},{"id":"4", "name":"Angular"},{"id":"5", "name":"PHP"}],
+const {
+  Component,
+  inject: { service }
+} = Ember;
 
-    actions: {
+// const tagColors = ['#22A7F0', '#26A65B', '#F3C13A', '#DC3023', '#F58F84', '#CF000F', '#E68364', '#757D75', '#CF3A24', '#9B59B6', '#4DAF7C'];
+
+export default Component.extend({
+  tagColors,
+  store: service(),
+  tags: [],
+  init() {
+    this._super(...arguments);
+    let tags = this.get('store').findAll('tag');
+    this.set('tags', tags);
+  },
+  actions: {
     askQuestion() {
       alert('Perform ask');
     }

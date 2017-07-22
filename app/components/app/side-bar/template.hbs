@@ -1,18 +1,15 @@
 <div class="side-navbar {{routeName}}">
   {{#paper-list}}
-    {{#paper-subheader}}Categories{{/paper-subheader}}
-    {{#each categories as |item|}}
-      {{#paper-item class="category"}}
-          <p>{{item.name}}</p>
-      {{/paper-item}}
-    {{/each}}
-    {{#paper-item class="text-link"}}<a href="#">..more</a>{{/paper-item}}
     {{#paper-subheader}}Tags{{/paper-subheader}}
-    {{#each tags as |item|}}
-      {{#paper-item class="tag"}}
-          <p>{{item.name}}</p>
-      {{/paper-item}}
-    {{/each}} 
+    {{#if tags}}
+      {{#each tags as |item|}}
+        {{#paper-item class="tag"}}
+          <p class="tag-item tag-{{item.color}}">{{item.name}}</p>
+        {{/paper-item}}
+      {{/each}}
+    {{else}}
+      {{app/app-loader level1=true}}
+    {{/if}}
     {{#paper-item class="text-link"}}<a href="#">..more</a>{{/paper-item}}
   {{/paper-list}}
   <div class="ask-btn-wrapper">
