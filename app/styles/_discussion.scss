@@ -1,0 +1,18 @@
+.discussion-wrapper {
+  background: #fff;
+  .description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+}
+
+.answers-wrapper {
+  .answers-banner {
+    background-image: linear-gradient(to right, $app-primary, $app-secondary);
+    h3 {
+      color: #fff;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+}

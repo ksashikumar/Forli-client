@@ -1,50 +1,43 @@
 <div class="question-wrapper container-wrapper">
-<div class="layout-row layout-xs-column">
-  <div class="flex-80 flex-offset-10">
-    <div class="author-wrapper">
-      {{app/author-bio user=userInfo.data}}
-    </div>
-    {{#paper-form onSubmit=(action "basicSubmitAction") as |form|}}
-    <div class="layout-row">
-      <div class="layout-column flex">
-      {{form.input label="Title of your question" value=title onChange=(action (mut title)) required=true}}
+  <div class="layout-row layout-xs-column">
+    <div class="flex-80 flex-offset-10">
+      <div class="author-wrapper">
+        {{app/author-bio user=userInfo.data}}
       </div>
-    </div>
-    <div class="editor-wrapper">
-      {{app/forli-editor content=editorContent}}
-    </div>
-
-    <div class="layout-row layout-align-center-center flex mt-4">
-      <div class="flex">
-        <h3 class="name text-semibold">Add Tags</h3>
-        {{#paper-chips
-          readOnly=readOnly
-          removeItem=(action "removeCustomItem")
-          addItem=(action "addCustomItem")
-          placeholder="Add a tag"
-          content=tags as |item|}}
-          <div>{{item}}</div>
-        {{/paper-chips}}
-      </div>
-      <div class="flex">
-        <div class="btn-wrapper text-right">
-          {{#form.submit-button raised=true primary=true class="m-0"}}Ask Question{{/form.submit-button}}
+      
+      {{#paper-form onSubmit=(action "basicSubmitAction") as |form|}}
+      <div class="layout-row">
+        <div class="layout-column flex">
+          {{form.input label="Title of your question" value=title onChange=(action (mut title)) required=true}}
         </div>
       </div>
+      <div class="editor-wrapper">
+        {{app/forli-editor content=editorContent}}
+      </div>
+
+      <div class="layout-row layout-align-center-center flex mt-4">
+        <div class="flex">
+          <span>Tags</span> {{#paper-chips readOnly=readOnly removeItem=(action "removeCustomItem") addItem=(action "addCustomItem")
+          placeholder="Add a tag" content=tags as |item|}}
+          <div>{{item}}</div>
+          {{/paper-chips}}
+        </div>
+        <div class="flex">
+          <div class="btn-wrapper text-right">
+            {{#form.submit-button raised=true primary=true class="m-0"}}Ask Question{{/form.submit-button}}
+          </div>
+        </div>
+      </div>
+      {{/paper-form}}
+
     </div>
-
-    {{/paper-form}}
-
   </div>
-</div>
 </div>
 
 <div class="related-wrapper container-wrapper">
   <div class="layout-row layout-xs-column">
-  <div class="flex-80 flex-offset-10">
-    {{#if (gt discussion.content.length 0) }}
-      {{route-home/forum-list data=discussion}}
-    {{/if}}
-  </div>
+    <div class="flex-80 flex-offset-10">
+      {{#if (gt discussion.content.length 0) }} {{route-home/forum-list data=discussion}} {{/if}}
+    </div>
   </div>
 </div>

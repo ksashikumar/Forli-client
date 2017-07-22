@@ -1,1 +1,53 @@
-<div>Discussion page</div>
+<div class="discussion-wrapper container-wrapper">
+  <div class="layout-row layout-xs-column">
+    <div class="flex-80 flex-offset-10">
+      <h1 class="text-semibold mb-1">How do JavaScript closures work?</h1>
+      <div class="author-wrapper">
+        {{app/author-bio user=userInfo.data}}
+      </div>
+      <div class="description">
+        <p>How would you explain JavaScript closures to someone with a knowledge of the concepts they consist of (for example
+          functions, variables and the like), but does not understand closures themselves? I have seen the Scheme example
+          given on Wikipedia, but unfortunately it did not help.</p>
+      </div>
+      <div class="tags-wrapper">
+        {{app/tag-list tagList=tagList}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="related-wrapper container-wrapper">
+  <div class="layout-row layout-xs-column">
+    <div class="flex-80 flex-offset-10">
+      <div class="layout-row flex">
+
+        {{app/card-holder cardAuthor=userInfo.data}}
+        {{app/card-holder cardAuthor=userInfo.data}}
+        {{app/card-holder cardAuthor=userInfo.data}}
+        {{app/card-holder cardAuthor=userInfo.data}}
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="answers-wrapper">
+  <div class="answers-banner">
+    <div class="layout-row layout-xs-column">
+      <div class="flex-80 flex-offset-10">
+        <h3>15 Answers</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="comments-wrapper container-wrapper">
+  <div class="layout-row layout-xs-column">
+    <div class="flex-80 flex-offset-10">
+      <div class="comment-wrapper">
+        {{app/comment-holder}}
+      </div>
+    </div>
+  </div>
+</div>

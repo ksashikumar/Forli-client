@@ -1,8 +1,11 @@
 // Common files included
 @import "ask";
+@import "discussion";
 
 // Components files included here
 @import "components/global-header";
+@import "components/card-holder";
+@import "components/comment-holder";
 @import "components/sidebar";
 @import "components/forum-list";
 @import "components/tags";

@@ -9,4 +9,8 @@
     .md-list-item-inner {
       padding-left: 0px;
     }
+    md-list-item.md-2-line .md-list-item-text, md-list-item.md-2-line > .md-no-style .md-list-item-text {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
 }

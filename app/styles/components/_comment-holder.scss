@@ -1,0 +1,38 @@
+.comment {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  .answer {
+    margin-left: 3.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    h1,
+    h2,
+    h3 {
+      font-weight: 600;
+    }
+    h1 {
+      font-size: 1.25rem;
+    }
+    h2 {
+      font-size: 1.125rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+  }
+}
+
+.reply-wrapper {
+  margin-left: 3.5rem;
+  margin-top: 2rem;
+  .reply {
+    margin: 1rem 0 0 3rem;
+    font-size: 0.875rem;
+    color: #666666;
+    border-top: dashed 1px rgba(0, 0, 0, 0.1);
+  }
+  .time {
+    color: $text-light;
+    margin-left: 0.25rem;
+    font-size: 0.75rem;
+  }
+}
