@@ -1,4 +1,5 @@
 import Model from 'ember-data/model';
+import { hasMany } from 'ember-data/relationships';
 import attr from 'ember-data/attr';
 import { memberAction } from 'ember-api-actions';
 
@@ -11,6 +12,7 @@ export default Model.extend({
   categoryId: attr(),
   posts: attr(),
   viewCount: attr(),
+  answersCount: attr(),
   postsCount: attr(),
   createdAt: attr(),
   updatedAt: attr(),
@@ -20,6 +22,6 @@ export default Model.extend({
   similar: memberAction({ path: 'similar' }),
   upvote: memberAction({ path: 'upvote' }),
   downvote: memberAction({ path: 'downvote' }),
-  answers: attr(),
-  updateViewCount: memberAction({ path: 'view' })
+  updateViewCount: memberAction({ path: 'view' }),
+  answers: hasMany('answer')
 });
