@@ -7,7 +7,7 @@ body {
   margin: 0;
   color: $text-grey-dark;
   font-size: 16px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'SourceSansPro', sans-serif;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -28,7 +28,7 @@ button {
 }
 
 md-icon.md-default-theme, md-icon {
-    color: rgba($text-light, 0.5); 
+    color: rgba($text-light, 0.5);
 }
 
 ::-webkit-input-placeholder {
@@ -38,7 +38,7 @@ md-icon.md-default-theme, md-icon {
 .app-wrapper {
   position: relative;
   margin: 0 auto;
-  padding-top: 68px;  // to offset fixed header  
+  padding-top: 68px;  // to offset fixed header
   margin-bottom: 2rem;
 }
 

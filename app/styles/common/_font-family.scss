@@ -1,31 +1,35 @@
 @font-face {
-  font-family: 'SourceSansPro';
-  font-style: normal;
-  font-weight: 300;
-  src: 
-       url('fonts/SourceSansPro-Light.otf') format('woff');
+    font-family: 'SourceSansPro';
+    src: url('fonts/SourceSansPro-Light.eot');
+    src:url("fonts/SourceSansPro-Light.eot?") format("eot"),
+	  url("fonts/SourceSansPro-Light.otf.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'SourceSansPro';
-  font-style: normal;
-  font-weight: 400;
-  src: 
-       url('fonts/SourceSansPro-Regular.otf') format('woff');
+    font-family: 'SourceSansPro';
+    src: url('fonts/SourceSansPro-Regular.eot');
+    src:url("fonts/SourceSansPro-Regular.eot?") format("eot"),
+	  url("fonts/SourceSansPro-Regular.otf.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'SourceSansPro';
-  font-style: normal;
-  font-weight: 500;
-  src: 
-       url('fonts/SourceSansPro-Semibold.otf') format('woff');
+    font-family: 'SourceSansPro';
+    src: url('fonts/SourceSansPro-Semibold.eot');
+    src:url("fonts/SourceSansPro-Semibold.eot?") format("eot"),
+	  url("fonts/SourceSansPro-Semibold.otf.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'SourceSansPro';
-  font-style: normal;
-  font-weight: 700;
-  src: 
-       url('fonts/SourceSansPro-Bold.otf') format('woff');
+    font-family: 'source-sans-pro-bold';
+    src: url('fonts/SourceSansPro-Bold.eot');
+    src:url("fonts/SourceSansPro-Bold.eot?") format("eot"),
+	  url("fonts/SourceSansPro-Bold.otf.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
 }
