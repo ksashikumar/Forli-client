@@ -37,17 +37,45 @@
 }
 
 // tag style over-ridding
+
+md-chips.md-default-theme .md-chips, md-chips .md-chips {
+  border: 1px solid darken($app-bg, 10%);
+    border-radius: 3px;
+    background: #fff;
+    padding: 0;
+    box-shadow: none;
+    &.md-focused {
+    box-shadow: none !important;
+  }
+}
+
 .md-chips.md-removable md-chip {
-  background-color: #fff !important;
-  color: $app-primary;
-  font-size: 0.875rem;
+  background-color: $app-primary;
+  color: #fff;
+  font-size: 0.75rem;
   border-radius: 1rem;
   border: 1px solid $app-primary;
+  margin: 0.25rem;
+  height: 1.75rem;
+  line-height: 2.3;  
+  &.md-focused {
+    background: #fff;
+    color: $app-primary;
+  }
+}
+
+.md-chips md-chip .md-chip-remove {
+  height: 1.75rem;
+  line-height: 2;
+}
+
+.md-chips .md-chip-input-container, .md-chips .md-chip-input-container:not(:first-child) {
+  margin: 1px 0.5rem;
 }
 
 .md-chips md-chip .md-chip-remove md-icon {
-  color: $app-primary !important;
-  font-size: 0.875rem !important;
+  color: #fff ;
+  font-size: 0.75rem !important;
 }
 
 

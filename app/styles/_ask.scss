@@ -1,5 +1,5 @@
 .question-wrapper {
-    background: #fff;
+    // background: #fff;
 }
 
 .question-wrapper .md-input {
@@ -9,11 +9,10 @@
 
 .ask-question-wrapper {
   .input-title {
-    border: none;
-    border-bottom: 1px solid #CCC;
-    margin-bottom: 30px;
-    margin-top: 5px;
-    font-size: 20px;
+    border: 1px solid darken($app-bg, 10%);
+    border-radius: 4px;
+    font-size: 1.25rem;
+    padding: 0.5rem;
     font-weight: 600;
     outline: none;
   }
