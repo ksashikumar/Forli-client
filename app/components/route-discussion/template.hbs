@@ -1,7 +1,8 @@
 <div class="discussion-wrapper container-wrapper">
   <div class="layout-row layout-xs-column">
     <div class="flex-80 flex-offset-10">
-      <h1 class="text-semibold">{{discussion.title}}</h1>
+      <div class="vote-outer-wrapper"><div class="vote-wrapper">{{app/vote-holder}}</div></div>
+      <h1 class="title">{{discussion.title}}</h1>
       <div class="author-wrapper">
         {{app/author-bio user=userInfo.data}}
       </div>
