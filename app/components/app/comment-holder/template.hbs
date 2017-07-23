@@ -13,7 +13,7 @@
     <div class="reply-wrapper">
       {{#each replies as |reply|}}
         <div class="reply">
-          <p>{{reply.content}} <span class="author"><a href="#">{{reply.user.name}}</a></span>
+          <p>{{reply.content}} - <span class="author"><a href="#">{{reply.user.name}}</a></span>
             <span class="time">{{paper-icon "access_time" size=12}} {{moment-format reply.createdAt 'MMM DD, YYYY'}}</span>
           </p>
         </div>

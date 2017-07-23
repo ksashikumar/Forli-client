@@ -1,8 +1,8 @@
 .comment {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-  padding-top: 10px;
-  min-height: 170px;
-
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 1rem;
+  min-height: 10rem;
+  padding-bottom: 1rem;
   .answer {
     position: relative;
     margin-left: 3.5rem;
@@ -24,20 +24,23 @@
     }
     .vote-wrapper {
       position: absolute;
-    top: 0;
-    left: -3rem;
+      top: 0;
+      left: -3rem;
     }
   }
 }
 
 .reply-wrapper {
-  margin-left: 1.5rem;
+  margin-left: 2.5rem;
   margin-top: 2rem;
   .reply {
-    margin: 1rem 0 0 3rem;
+    margin: 0.5rem 0 0 3rem;
     font-size: 0.875rem;
     color: #666666;
     border-top: dashed 1px rgba(0, 0, 0, 0.1);
+    p {
+      margin: 0.5rem;
+    }
   }
   .time {
     color: $text-light;
@@ -57,8 +60,4 @@
 
 .comment-wrapper {
   padding-top: 15px;
-}
-
-.answer-input-wrapper {
-  margin-top: 10px;
 }
