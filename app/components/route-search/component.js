@@ -75,6 +75,7 @@ export default Component.extend({
       this.setSearchRoute(true);
     },
     debouncedSearch() {
+      this.set('isLoading', true);
       run.debounce(this, this.setSearchRoute, 1000);
     }
   }

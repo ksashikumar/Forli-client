@@ -1,6 +1,9 @@
-$search-width: 20rem;
-.quick-search-input {
-  width: $search-width;
+$quick-search-width: 20rem;
+$app-search-width: 30rem;
+
+.quick-search-input,
+.app-search-input {
+  width: $quick-search-width;
   outline: none;
   border: 2px solid $text-dark;
   border-radius: 4px;
@@ -11,7 +14,7 @@ $search-width: 20rem;
 .quick-search-wrapper {
   position: absolute;
   top: 28px;
-  width: $search-width;
+  width: $quick-search-width;
   height: 300px;
   color: $text-dark;
   overflow-y: scroll;
@@ -28,4 +31,9 @@ $search-width: 20rem;
       margin-top: 10px;
     }
   }
+}
+
+.app-search-input{
+  margin: 30px 15px;
+  width: $app-search-width;
 }
