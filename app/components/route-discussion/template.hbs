@@ -51,7 +51,10 @@
           {{app/comment-holder commentAdded=commentAdded buttonText="Reply" answer=answer onReply=(action 'submitReply')}}
         {{/each}}
       </div>
-      {{app/comment-input buttonText="Answer" content=content onsuccess=(action 'submitAnswer')}}
     </div>
   </div>
+</div>
+
+<div class="answer-input-wrapper">
+      {{app/comment-input buttonText="Answer" content=content direction="center" onsuccess=(action 'submitAnswer')}}  
 </div>

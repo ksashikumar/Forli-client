@@ -30,6 +30,10 @@
 }
 
 .answer-input-wrapper {
+  background: darken($app-bg, 10%);
+}
+
+.answer-input-container {
   .answer-box {
     textarea {
       width: 96%;
