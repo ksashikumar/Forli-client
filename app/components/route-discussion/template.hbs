@@ -1,7 +1,7 @@
 <div class="discussion-wrapper container-wrapper">
   <div class="layout-row layout-xs-column">
     <div class="flex-80 flex-offset-10">
-      <div class="vote-outer-wrapper"><div class="vote-wrapper">{{app/vote-holder}}</div></div>
+      <div class="vote-outer-wrapper"><div class="vote-wrapper">{{app/vote-holder votes=votes voteAction=discussion.voteAction upVote=(action 'upVote') downVote=(action 'downVote')}}</div></div>
       <h1 class="title">{{discussion.title}}</h1>
       <div class="author-wrapper">
         {{app/author-bio user=userInfo.data}}

@@ -14,5 +14,10 @@ export default Model.extend({
   postsCount: attr(),
   createdAt: attr(),
   updatedAt: attr(),
+  downvotesCount: attr(),
+  upvotesCount: attr(),
+  voteAction: attr(),
   similar: memberAction({ path: 'similar' }),
+  upvote: memberAction({ path: 'upvote' }),
+  downvote: memberAction({ path: 'downvote' }),
 });
