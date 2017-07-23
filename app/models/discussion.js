@@ -11,6 +11,7 @@ export default Model.extend({
   categoryId: attr(),
   posts: attr(),
   viewCount: attr(),
+  answersCount: attr(),
   postsCount: attr(),
   createdAt: attr(),
   updatedAt: attr(),

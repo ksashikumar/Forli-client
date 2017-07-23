@@ -9,12 +9,16 @@
   {{/paper-list}}
   {{#paper-list class="filter-list"}}
     {{#paper-subheader}}Tags{{/paper-subheader}}
-    {{#if tags}}
-      {{#each tags as |item|}}
-        {{#paper-item class="tag"}}
-          {{#link-to "index" (query-params tag_ids=item.id)}}<p class="tag-item tag-{{item.color}}">{{item.name}}</p>{{/link-to}}
-        {{/paper-item}}
-      {{/each}}
+    {{#if tags.isLoaded}}
+      {{#if (gt tags.length 0)}}
+        {{#each tags as |item|}}
+          {{#paper-item class="tag"}}
+            {{#link-to "index" (query-params tag_ids=item.id)}}<p class="tag-item tag-{{item.color}}">{{item.name}}</p>{{/link-to}}
+          {{/paper-item}}
+        {{/each}}
+      {{else}}
+        <div class="no-data-t">Tags not available!!!</div>
+      {{/if}}
     {{else}}
       {{app/app-loader level1=true}}
     {{/if}}
