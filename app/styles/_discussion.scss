@@ -29,6 +29,17 @@
   }
 }
 
+.answer-input-wrapper {
+  .answer-box {
+    textarea {
+      width: 97%;
+      border-color: $app-primary;
+      border-radius: 4px;
+      padding: 0.5rem;
+    }
+  }
+}
+
 .card-wrapper {
   max-width: 100%;
   width: 100%;
