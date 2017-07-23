@@ -2,12 +2,15 @@ import Ember from 'ember';
 
 const {
   Component,
-  $
+  $,
+  inject
 } = Ember
 
 export default Component.extend({
+  forli: inject.service('forli'),
   click(event) {
     this.handleBurgerMenu(event);
+    this.handleSearchClose(event);
   },
   handleBurgerMenu(event) {
     let routerName = Ember.getOwner(this).lookup('controller:application').currentPath;
@@ -26,6 +29,17 @@ export default Component.extend({
       } else {
         let navIsVisible = $('.side-navbar').hasClass('show');
         this.showOrHideNavBar(navIsVisible);
+      }
+    }
+  },
+  handleSearchClose(event) {
+    let isClickIsfromSearchHolder = $(event.target).parents('.search-wrapper').length;
+    if(isClickIsfromSearchHolder === 0) {
+      let clickIsFrom = $(event.target).parents('.global-search').length;
+      if (clickIsFrom) {
+        this.toggleProperty('forli.searchEnabled')
+      } else {
+        this.set('forli.searchEnabled', false);
       }
     }
   },

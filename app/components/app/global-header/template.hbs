@@ -8,10 +8,10 @@
       <h2 class="text-semibold">Forli</h2>
     {{/link-to}}
     <span class="flex"></span>
-    {{#if showSearchBar}}
+    {{#if forli.searchEnabled}}
       {{app/quick-search showSearchBar=showSearchBar}}
     {{/if}}
-    {{#paper-button iconButton=true onClick=(action 'toggleSearch')}}
+    {{#paper-button class="global-search" iconButton=true}}
       {{paper-icon "search"}}
     {{/paper-button}}
 

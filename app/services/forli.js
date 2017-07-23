@@ -10,6 +10,7 @@ export default Service.extend({
   userLoggedIn: false,
   headers: null,
   userName: null,
+  searchEnabled: false,
   init() {
     this.appInfo = Forli.getAppInfo();
     this.headers = Forli.getHeaders();
