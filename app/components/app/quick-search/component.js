@@ -11,6 +11,7 @@ const {
 
 export default Component.extend(performSearch, {
   term: '',
+  showResults: false,
   isTermPresent: computed.gt('term.length', 1),
   showLinkToPage: computed.gt('searchResults.lastSuccessful.value.meta.count', searchConstant.searchLimit),
   searchResults: task(function* () {

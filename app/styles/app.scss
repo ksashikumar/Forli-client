@@ -2,6 +2,8 @@ $primary: "blue";
 $accent: "indigo";
 $warn: "red";
 
+@import "ember-basic-dropdown";
+
 @import "common/font-family";
 @import "common/variables";
 @import 'ember-paper';
