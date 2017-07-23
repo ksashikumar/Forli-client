@@ -47,24 +47,11 @@
   <div class="layout-row layout-xs-column">
     <div class="flex-80 flex-offset-10">
       <div class="comment-wrapper">
-        {{app/comment-holder}}
+        {{#each answers as |answer|}}
+          {{app/comment-holder buttonText="Reply" answer=answer onReply=(action 'submitReply')}}
+        {{/each}}
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="answer-input-wrapper">
-  <div class="layout-row layout-align-center-center p-3">
-    <div class="flex-initial">{{app/avatar-holder src=userInfo.data.image name=userInfo.data.name class="md-avatar" }}</div>
-    <div class="flex-60">
-      <div class="answer-box">
-        <textarea rows="1" cols="50"></textarea>
-      </div>
-    </div>
-    <div class="flex-initial">
-      <div class="btn-wrapper pl-3">
-        {{#paper-button raised=true primary=true class="m-0"}}Answer{{/paper-button}}
-      </div>
+      {{app/comment-input buttonText="Answer" content=content onsuccess=(action 'submitAnswer')}}
     </div>
   </div>
 </div>

@@ -197,3 +197,8 @@
 .cursor-pointer {
   cursor: pointer;
 }
+
+.disable-button {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

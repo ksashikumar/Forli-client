@@ -1,5 +1,6 @@
 .comment {
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.38);
+  padding-top: 10px;
   .answer {
     position: relative;
     margin-left: 3.5rem;
@@ -41,4 +42,13 @@
     margin-left: 0.25rem;
     font-size: 0.75rem;
   }
+}
+
+.comment-reply-btn {
+  position: absolute;
+  right: 0px;
+  top: 15px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
 }
