@@ -1,8 +1,14 @@
+// TODO Move the common voting code into a mixin post demo
+
 import Ember from 'ember';
 const {
   computed,
-  inject: { service }
+  inject: { service },
+  get
 } = Ember;
+
+const upvoteActionState = 2;
+const downvoteActionState = 1;
 
 export default Ember.Component.extend({
   store: service(),
@@ -20,7 +26,35 @@ export default Ember.Component.extend({
       return value
     }
   }),
-  actions :{
+  votes: computed('answer.upvotesCount', 'answer.downvotesCount', function() {
+    return get(this, 'answer.upvotesCount') - get(this, 'answer.downvotesCount');
+  }),
+  handlePreviousVoteState(actionState) {
+    switch(get(this, 'answer.voteAction')) {
+      case 1:
+        this.decrementProperty('answer.downvotesCount');
+        break;
+      case 2:
+        this.decrementProperty('answer.upvotesCount');
+        break;
+    }
+    this.set('answer.voteAction', actionState);
+  },
+  actions: {
+    upVote() {
+      let currentAnswer = this.get('answer');
+      currentAnswer.upvote().then(() => {
+        this.incrementProperty('answer.upvotesCount');
+        this.handlePreviousVoteState(upvoteActionState);
+      })
+    },
+    downVote() {
+      let currentAnswer = this.get('answer');
+      currentAnswer.downvote().then(() => {
+        this.incrementProperty('answer.downvotesCount');
+        this.handlePreviousVoteState(downvoteActionState);
+      })
+    },
     enableReply() {
       this.sendAction('onReplyEnabled');
       this.toggleProperty('showReply');

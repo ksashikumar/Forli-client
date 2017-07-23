@@ -4,7 +4,9 @@
     <div onClick={{action 'enableReply'}} class="comment-reply-btn">Reply</div>
   </div>
   <div class="answer">
-    <div class="vote-wrapper">{{app/vote-holder}}</div>
+    <div class="vote-wrapper">
+      {{app/vote-holder votes=votes voteAction=answer.voteAction upVote=(action 'upVote') downVote=(action 'downVote')}}
+    </div>
     {{answer.content}}
   </div>
   {{#if replies}}
