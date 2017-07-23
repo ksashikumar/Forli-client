@@ -1,25 +1,29 @@
-{{input
-  placeholder='Search forli'
-  value=term
-  autofocus=true
-  on-change=(action (mut term))
-  key-down=(perform searchResults)
-  class="quick-search-input"
-}}
+<div class="dropdown">
+  {{input
+    data-toggle="dropdown"
+    value=term
+    autofocus=true
+    on-change=(action (mut term))
+    key-down=(perform searchResults)
+    class="quick-search-input ember-text-field dropdown-toggle"
+  }}
 
-{{#if isTermPresent}}
-  <div class="quick-search-wrapper quick-search-wrapper--fade-in">
+  <ul class="quick-search-wrapper dropdown-menu">
     {{#if searchResults.isRunning}}
-      Loading..
+      <li class="result-info"> Loading.. </li>
     {{else}}
       {{#each searchResults.lastSuccessful.value.discussions as |discussion|}}
-          {{#link-to 'discussion' discussion.id class="cursor-pointer" target=target}}
-            <h1 class="ellipsis">{{discussion.title}}</h1>
+        <li>
+          {{#link-to 'discussion' discussion.id class="cursor-pointer ellipsis"}}
+            {{discussion.title}} (#{{discussion.id}})
           {{/link-to}}
+        </li>
+      {{else if isTermPresent}}
+        <li class="result-info"> No Results Found </li>
       {{/each}}
       {{#if showLinkToPage}}
-        {{#link-to 'search' (query-params term=term)}} View All Results {{/link-to}}
+        <li> {{#link-to 'search' (query-params term=term)}} View All Results {{/link-to}} </li>
       {{/if}}
     {{/if}}
-  </div>
-{{/if}}
+  </ul>
+</div>

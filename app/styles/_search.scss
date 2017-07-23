@@ -1,31 +1,27 @@
 .quick-search-input {
-
+  width: 240px;
+  outline: none;
+  padding-left: 10px;
 }
 
 .quick-search-wrapper {
   position: absolute;
-  top: 30px;
+  top: 27px;
   border: 1px solid #eee;
   width: 240px;
   height: 300px;
+  color: #000;
   overflow-y: scroll;
-  word-wrap: break-word;
-  word-break: break-word;
-  
-  &--fadeout {
-    -webkit-animation: slidefromtop 0.3s;
-    animation: slidefromtop 0.3s;
-  }
-}
+  background: #fff;
+  list-style: none;
+  padding: 5px;
 
-@keyframes slidefromtop {
-  from {
-    transform: translateY(-5px);
-    opacity: 0;
-  }
+  li {
+    padding: 5px;
 
-  to {
-    transform: translateY(0);
-    opacity: 1;
+    &.result-info {
+      text-align: center;
+      margin-top: 10px;
+    }
   }
 }
