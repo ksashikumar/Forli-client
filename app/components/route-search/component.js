@@ -4,8 +4,7 @@ const {
   Component,
   computed,
   get,
-  run,
-  isEmpty
+  run
 } = Ember;
 
 export default Component.extend({
@@ -52,17 +51,17 @@ export default Component.extend({
   setSearchRoute(persistPage = false) {
     let router = get(this, 'router');
     let term = get(this, 'term');
-    let page = get(this, 'pagePresent') && persistPage ? get(this, 'page') : undefined;
+    let page = get(this, 'pagePresent') && persistPage ? get(this, 'page') : 1;
     let limit = get(this, 'limit');
     let queryParams = {
-      term: isEmpty(term) ? undefined : term,
+      term,
       page,
       limit
     };
     if (JSON.stringify(queryParams) === JSON.stringify(get(this, 'searchParams'))) {
-      router.refresh();
+      router._routerMicrolib.refresh();
     } else {
-      router.transitionTo({
+      router.transitionTo('search', {
         queryParams
       });
     }

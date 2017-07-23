@@ -1,20 +1,21 @@
 import Ember from 'ember';
-import ModalRouteMixin from 'ember-routable-modal/mixins/route';
 import underscoreToCamelcase from '../utils/underscore-to-camelcase';
 import DS from 'ember-data';
 
 const {
  Route,
  RSVP,
- get
+ get,
+ inject: { service }
 } = Ember;
 
 const {
   PromiseObject
 } = DS;
 
-const searchAPI = 'api/v1/discussions/search';
-export default Route.extend(ModalRouteMixin, {
+const searchAPI = 'https://forli-api.herokuapp.com/api/v1/discussions/search';
+export default Route.extend({
+  ajax: service(),
   queryParams: {
     term: { refreshModel: true },
     page: { refreshModel: true },
@@ -30,7 +31,7 @@ export default Route.extend(ModalRouteMixin, {
     if (params.term && params.term.length > 1) {
       return PromiseObject.create({
         promise: get(this, 'ajax').post(searchAPI, {
-          data: JSON.stringify(params)
+          data: params
         }).then((result) => {
           return underscoreToCamelcase(result);
         })

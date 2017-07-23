@@ -2,9 +2,6 @@ $primary: "blue";
 $accent: "indigo";
 $warn: "red";
 
-@import "ember-routable-modal/core";
-@import "ember-routable-modal/dialog";
-
 @import "common/font-family";
 @import "common/variables";
 @import 'ember-paper';
