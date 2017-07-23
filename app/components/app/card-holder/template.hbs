@@ -1,7 +1,9 @@
 <div class="card-container flex">
   <div class="card">
     <h3>{{formattedTag}}</h3>
-    <h1 class="ellipsis">{{discussion.title}}</h1>
+    {{#link-to 'discussion' discussion.id class="cursor-pointer" target=target}}
+      <h1 class="ellipsis">{{discussion.title}}</h1>
+    {{/link-to}}
     {{app/author-bio user=discussion.user}}
   </div>
 </div>
