@@ -1,3 +1,17 @@
+.tag-0 { border-left-color: #F44336 }; .tag-5 { border-left-color: #2196F3 };
+.tag-1 { border-left-color: #F50057 }; .tag-6 { border-left-color: #0097A7 };
+.tag-2 { border-left-color: #9C27B0 }; .tag-7 { border-left-color: #00C853 };
+.tag-3 { border-left-color: #673AB7 }; .tag-8 { border-left-color: #FFC400 };
+.tag-4 { border-left-color: #3D5AFE }; .tag-9 { border-left-color: #607D8B };
+
+
+.list-tag-0 { background: #F44336; border: 1px solid #F44336;}; .list-tag-5 { background: #2196F3; border: 1px solid #2196F3; };
+.list-tag-1 { background: #F50057; border: 1px solid #F50057; }; .list-tag-6 { background: #0097A7; border: 1px solid #0097A7; };
+.list-tag-2 { background: #9C27B0; border: 1px solid #9C27B0; }; .list-tag-7 { background: #00C853; border: 1px solid #00C853; };
+.list-tag-3 { background: #673AB7; border: 1px solid #673AB7; }; .list-tag-8 { background: #FFC400; border: 1px solid #FFC400; };
+.list-tag-4 { background: #3D5AFE; border: 1px solid #3D5AFE; }; .list-tag-9 { background: #607D8B; border: 1px solid #607D8B; };
+
+
 .tag-container {
   display: inline-block;
   .tag {
@@ -23,7 +37,6 @@
 }
 
 // tag style over-ridding
-
 .md-chips.md-removable md-chip {
   background-color: #fff !important;
   color: $app-primary;
@@ -37,12 +50,4 @@
   font-size: 0.875rem !important;
 }
 
-// .md-chip-input-container {
-//   margin-top: 3px !important;
-// }
 
-// .md-chips md-chip .md-chip-remove {
-//   width: 20px;
-//   height: 20px;
-//   height: 14px;
-// }

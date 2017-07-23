@@ -1,6 +1,7 @@
 <div class="author-bio-wrapper">
   {{#paper-item class="md-2-line"}}
-    <img src={{user.image}} alt={{user.name}} class="md-avatar">
+    <!-- <img src={{user.image}} alt={{user.name}} class="md-avatar"> -->
+    {{app/avatar-holder src=user.image name=user.name class="md-avatar" }}
     <div class="md-list-item-text">
       <h3 class="name text-semibold">{{user.name}}</h3>
       <div class="inner-container">

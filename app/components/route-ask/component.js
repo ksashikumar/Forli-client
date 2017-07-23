@@ -11,6 +11,10 @@ export default Component.extend({
   editorContent: '',
   tagList: ['JavaScript', 'HTML', 'CSS'],
   tags: [],
+  init() {
+    this._super(...arguments);
+    this.set('tags', []);
+  },
   actions: {
     removeCustomItem(tag) {
       var tagsArray = this.get('tags');
@@ -25,11 +29,12 @@ export default Component.extend({
     basicSubmitAction() {
       let userData = this.userInfo.data;
       let store = this.get('store');
+      let tags = this.get('tags');
       let discussion = store.createRecord('discussion', {
         title: this.get('title'),
         description: this.get('editorContent'),
-        tags: this.get('tags'),
-        userId: userData.userId
+        userId: userData.userId,
+        tags: tags
         // TODO: If needed, We'll enable this feature
         // categoryId: '1'
       });

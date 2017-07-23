@@ -1,20 +1,30 @@
 <div class="side-navbar {{routeName}} {{if forli.showLoginDialog "bring-back"}}">
-  {{#paper-list}}
+  {{#paper-list class="filter-list"}}
+    {{#paper-subheader}}Filter{{/paper-subheader}}
+    {{#each staticFiters as |filter|}}
+      {{#paper-item class="tag"}}
+        {{#link-to "index" (query-params filter=filter tag_ids=undefined) current-when="index"}}<p class="tag-item">{{filter}}</p>{{/link-to}}
+      {{/paper-item}}
+    {{/each}}
+  {{/paper-list}}
+  {{#paper-list class="filter-list"}}
     {{#paper-subheader}}Tags{{/paper-subheader}}
     {{#if tags}}
       {{#each tags as |item|}}
         {{#paper-item class="tag"}}
-          <p class="tag-item tag-{{item.color}}">{{item.name}}</p>
+          {{#link-to "index" (query-params tag_ids=item.id)}}<p class="tag-item tag-{{item.color}}">{{item.name}}</p>{{/link-to}}
         {{/paper-item}}
       {{/each}}
     {{else}}
       {{app/app-loader level1=true}}
     {{/if}}
-    {{#paper-item class="text-link"}}<a href="#">..more</a>{{/paper-item}}
+    {{#if (gt meta.count limit)}}
+      {{#paper-item class="text-link pt-1"}}{{#link-to 'tag-list'}}..more{{/link-to}}{{/paper-item}}
+    {{/if}}
   {{/paper-list}}
   <div class="ask-btn-wrapper">
   {{#link-to 'ask'}}
-    {{#paper-button raised=true primary=true}}Ask Question{{/paper-button}}
+    {{#paper-button raised=true primary=true class="m-0"}}Ask Question{{/paper-button}}
   {{/link-to}}
   </div>
 </div>

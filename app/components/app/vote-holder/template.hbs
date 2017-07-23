@@ -1,5 +1,5 @@
 <div class="vote-container">
-    <a class="vote-up" title="Upvote">{{paper-icon "keyboard_arrow_up" size=30}}</a>
-    <div class="vote-count">20</div>
-    <a class="vote-down" title="Downvote">{{paper-icon "keyboard_arrow_down" size=30}}</a>
+    <div class="vote vote-up {{if isUpVoted 'voted'}}" title="Upvote" onclick={{action "upVote"}}>{{paper-icon "keyboard_arrow_up" size=30}}</div>
+    <div class="vote-count">{{votes}}</div>
+    <div class="vote vote-down {{if isDownVoted 'voted'}}" title="Downvote" onclick={{action "downVote"}}>{{paper-icon "keyboard_arrow_down" size=30}}</div>
 </div>

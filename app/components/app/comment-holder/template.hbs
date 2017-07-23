@@ -1,10 +1,13 @@
 <div class="comment">
   <div class="author-wrapper">
     {{app/author-bio user=userInfo.data}}
+    <div onClick={{action 'enableReply'}} class="comment-reply-btn">Reply</div>
   </div>
   <div class="answer">
     <div class="vote-wrapper">{{app/vote-holder}}</div>
-    <h1>JavaScript Closures for Beginners</h1>
+    <div>
+      <h1>JavaScript Closures for Beginners</h1>
+    </div>
     <p>This page explains closures so that a programmer can understand them — using working JavaScript code. It is not for gurus
       or functional programmers. Closures are not hard to understand once the core concept is grokked. However, they are
       impossible to understand by reading any academic papers or academically oriented information about them!</p>
@@ -31,4 +34,7 @@
       </p>
     </div>
   </div>
+  {{#if showReply}}
+    {{app/comment-input direction="end" buttonText=buttonText content=replyContent onsuccess=(action 'submitReply')}}
+  {{/if}}
 </div>

@@ -1,10 +1,14 @@
 <div class="route-home">
-  {{#if (gt discussion.content.length 0) }}
-    <div class="home-wrapper">
-      <div class="forum-list-wrapper p-3">
-      {{route-home/forum-list data=discussion}}
+  {{#if discussion.isLoaded}}
+    {{#if (gt discussion.content.length 0) }}
+      <div class="home-wrapper">
+        <div class="forum-list-wrapper p-3">
+        {{route-home/forum-list data=discussion}}
+        </div>
       </div>
-    </div>
+    {{else}}
+      {{app/empty-state}}
+    {{/if}}
   {{else}}
     {{app/app-loader level2=true}}
   {{/if}}

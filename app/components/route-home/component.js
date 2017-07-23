@@ -5,4 +5,5 @@ const {
 } = Ember;
 
 export default Component.extend({
+
 });

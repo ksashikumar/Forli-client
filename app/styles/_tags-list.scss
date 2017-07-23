@@ -1,0 +1,35 @@
+.tags-wrapper {
+  h4 {
+    color: $text-dark;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  p {
+    font-size: 0.875rem;
+    color: $text-light;
+    text-align: center;
+  }
+  .tag-detailsList {
+    display: inline-block;
+    margin: 1rem;
+    border-radius: 2px;
+    &.list-tag-default {
+      border: 1px solid $app-primary;
+      a,
+      a:hover,
+      a:focus,
+      a:visited {
+        color: $app-primary;
+      }
+    }
+    a,
+    a:hover,
+    a:focus,
+    a:visited {
+      display: block;
+      color: #FFF;
+      padding: 2rem;
+      text-transform: capitalize;
+    }
+  }
+}

@@ -1,9 +1,12 @@
 // Common files included
+@import "home";
 @import "ask";
 @import "discussion";
+@import "tags-list";
 
 // Components files included here
 @import "components/global-header";
+@import "components/global-footer";
 @import "components/card-holder";
 @import "components/comment-holder";
 @import "components/vote-holder";
@@ -12,6 +15,6 @@
 @import "components/tags";
 @import "components/author-bio";
 @import "components/utilities";
+
 @import "components/default-spinner";
-@import "components/tag-color";
 @import "components/login-dialog";

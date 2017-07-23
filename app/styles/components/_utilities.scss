@@ -139,6 +139,18 @@
   padding-right: 1rem !important;
 }
 
+.pl-1 {
+  padding-left: 0.25rem !important;
+}
+
+.pl-2 {
+  padding-left: 0.5rem !important;
+}
+
+.pl-3 {
+  padding-left: 1rem !important;
+}
+
 .display-inline {
   display: inline-block;
   vertical-align: middle;
@@ -180,4 +192,13 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.disable-button {
+  opacity: 0.3;
+  cursor: not-allowed;
 }
