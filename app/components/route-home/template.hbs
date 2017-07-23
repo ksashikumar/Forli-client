@@ -1,5 +1,5 @@
 <div class="route-home">
-  {{#if discussion.isLoaded}}
+  {{#if (or discussion.isLoaded)}}
     {{#if (gt discussion.content.length 0) }}
       <div class="home-wrapper">
         <div class="forum-list-wrapper p-3">

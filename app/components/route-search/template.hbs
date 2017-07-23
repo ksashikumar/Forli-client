@@ -1,0 +1,20 @@
+{{input
+  value=term
+  autofocus=true
+  on-change=(action (mut term))
+  key-down=(action 'debouncedSearch')
+  class="app-search-input ember-text-field"
+}}
+
+{{#if isLoading}}
+  {{app/app-loader level3=true}}
+{{else}}
+  {{#if showResultsCheck}}
+    {{log 'results there' searchResults.discussions}}
+    <div class="forum-list-wrapper p-4">
+      {{route-home/forum-list data=searchResults.discussions}}
+    </div>
+  {{else if termPresent}}
+    {{app/empty-state emptyText="No results found for your search"}}
+  {{/if}}
+{{/if}}

@@ -8,9 +8,13 @@
       <h2 class="text-semibold">Forli</h2>
     {{/link-to}}
     <span class="flex"></span>
-    {{#paper-button iconButton=true}}
+    {{#if showSearchBar}}
+      {{app/quick-search showSearchBar=showSearchBar}}
+    {{/if}}
+    {{#paper-button iconButton=true onClick=(action 'toggleSearch')}}
       {{paper-icon "search"}}
     {{/paper-button}}
+
     {{#link-to 'ask'}}
       {{#paper-button iconButton=true}}
         {{paper-icon "add_circle_outline"}}
