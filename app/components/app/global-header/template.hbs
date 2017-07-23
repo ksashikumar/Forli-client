@@ -1,4 +1,4 @@
-<header>
+<header class={{if forli.showLoginDialog "bring-back"}}>
 {{#paper-toolbar}}
   {{#paper-toolbar-tools}}
     {{#paper-button class="burger-menu" iconButton=true}}
@@ -19,9 +19,13 @@
         {{paper-icon "add_circle_outline"}}
       {{/paper-button}}
     {{/link-to}}
-    {{#paper-button iconButton=true}}
-      {{paper-icon "account_circle"}}
-    {{/paper-button}}
+    {{#if forli.userLoggedIn}}
+      {{#paper-button iconButton=true}}
+        {{paper-icon "account_circle"}}
+      {{/paper-button}}
+    {{else}}
+      {{#paper-button raised=true primary=true class="login-button" onClick=(action "promptDialog")}}log in{{/paper-button}}
+    {{/if}}
   {{/paper-toolbar-tools}}
 {{/paper-toolbar}}
 <div class="toolbar-bottom"></div>
