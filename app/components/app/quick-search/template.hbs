@@ -1,0 +1,20 @@
+{{paper-input
+  value=term
+  autofocus=true
+  onChange=(action (mut term))
+  onKeyDown=(perform searchResults)
+  class="flex"
+}}
+
+{{#unless searchResults.isRunning}}
+  {{#paper-list}}
+    {{#paper-subheader}}Search Results{{/paper-subheader}}
+    {{#each searchResults.lastSuccessful.value.discussions as |discussion|}}
+      {{#paper-item class="md-3-line"}}
+        {{#link-to 'discussion' discussion.id class="cursor-pointer" target=target}}
+          <h1 class="ellipsis">{{discussion.title}}</h1>
+        {{/link-to}}
+      {{/paper-item}}
+    {{/each}}
+  {{/paper-list}}
+{{/unless}}
