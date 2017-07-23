@@ -1,7 +1,7 @@
 
 const searchConstant = {
   debounceTime: 300,
-  searchLimit: 10
+  searchLimit: 5
 };
 
 export default searchConstant;

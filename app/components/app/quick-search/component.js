@@ -5,7 +5,8 @@ import searchConstant from 'forli/constants/search';
 
 const {
   Component,
-  computed
+  computed,
+  $
 } = Ember;
 
 export default Component.extend(performSearch, {
@@ -18,9 +19,11 @@ export default Component.extend(performSearch, {
     let result = yield this.performSearch({ term: this.get('term') });
     return result;
   }).restartable(),
-  click() {
-    this.toggleProperty('showResultsDropdown');
-    this.set('term', '');
+  click(event) {
+    if ($(event.target).is('a, input')) {
+      this.toggleProperty('showResultsDropdown');
+      this.set('term', '');
+    }
   },
   didInsertElement() {
     document.querySelector('#quick-search-input').focus();

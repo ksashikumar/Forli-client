@@ -14,19 +14,21 @@
         <li class="result-info"> Loading.. </li>
       {{else}}
         {{#if (and searchResults.lastSuccessful.value.discussions (not isTermPresent))}}
-          <h3>Recent Search Result</h3>
+          <li>Recent Search Results</li>
+        {{else if (not isTermPresent)}}
+          <li class="result-info"> Type to search.. </li>
         {{/if}}
         {{#each searchResults.lastSuccessful.value.discussions as |discussion|}}
           <li>
-            {{#link-to 'discussion' discussion.id class="cursor-pointer ellipsis"}}
-              {{discussion.title}} (#{{discussion.id}})
+            {{#link-to 'discussion' discussion.id class="cursor-pointer"}}
+              {{truncate discussion.title 40 true}} (#{{discussion.id}})
             {{/link-to}}
           </li>
         {{else if isTermPresent}}
           <li class="result-info"> No Results Found </li>
         {{/each}}
         {{#if showLinkToPage}}
-          <li> {{#link-to 'search' (query-params term=term)}} View All Results {{/link-to}} </li>
+          <li class="result-info"> {{#link-to 'search' (query-params term=term)}} View All Results {{/link-to}} </li>
         {{/if}}
       {{/if}}
     </ul>
