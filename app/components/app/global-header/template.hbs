@@ -9,12 +9,12 @@
     {{/link-to}}
     <span class="flex"></span>
     {{#if showSearchBar}}
-      {{app/quick-search}}
+      {{app/quick-search showSearchBar=showSearchBar}}
     {{/if}}
     {{#paper-button iconButton=true onClick=(action 'toggleSearch')}}
       {{paper-icon "search"}}
     {{/paper-button}}
-    
+
     {{#link-to 'ask'}}
       {{#paper-button iconButton=true}}
         {{paper-icon "add_circle_outline"}}

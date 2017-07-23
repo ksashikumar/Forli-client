@@ -1,29 +1,34 @@
-<div class="dropdown">
+<div>
   {{input
-    data-toggle="dropdown"
     value=term
     autofocus=true
     on-change=(action (mut term))
     key-down=(perform searchResults)
-    class="quick-search-input ember-text-field dropdown-toggle"
+    id="quick-search-input"
+    class="quick-search-input ember-text-field"
   }}
 
-  <ul class="quick-search-wrapper dropdown-menu">
-    {{#if searchResults.isRunning}}
-      <li class="result-info"> Loading.. </li>
-    {{else}}
-      {{#each searchResults.lastSuccessful.value.discussions as |discussion|}}
-        <li>
-          {{#link-to 'discussion' discussion.id class="cursor-pointer ellipsis"}}
-            {{discussion.title}} (#{{discussion.id}})
-          {{/link-to}}
-        </li>
-      {{else if isTermPresent}}
-        <li class="result-info"> No Results Found </li>
-      {{/each}}
-      {{#if showLinkToPage}}
-        <li> {{#link-to 'search' (query-params term=term)}} View All Results {{/link-to}} </li>
+  {{#if (or isTermPresent showResultsDropdown)}}
+    <ul class="quick-search-wrapper">
+      {{#if searchResults.isRunning}}
+        <li class="result-info"> Loading.. </li>
+      {{else}}
+        {{#if (and searchResults.lastSuccessful.value.discussions (not isTermPresent))}}
+          <h3>Recent Search Result</h3>
+        {{/if}}
+        {{#each searchResults.lastSuccessful.value.discussions as |discussion|}}
+          <li>
+            {{#link-to 'discussion' discussion.id class="cursor-pointer ellipsis"}}
+              {{discussion.title}} (#{{discussion.id}})
+            {{/link-to}}
+          </li>
+        {{else if isTermPresent}}
+          <li class="result-info"> No Results Found </li>
+        {{/each}}
+        {{#if showLinkToPage}}
+          <li> {{#link-to 'search' (query-params term=term)}} View All Results {{/link-to}} </li>
+        {{/if}}
       {{/if}}
-    {{/if}}
-  </ul>
+    </ul>
+  {{/if}}
 </div>
