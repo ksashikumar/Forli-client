@@ -15,7 +15,8 @@ export default Component.extend({
     if(burgerMenu.length) {
       if(routerName === 'index') {
         let isIndexRoute = $('.app-wrapper').hasClass('router-index');
-        if(isIndexRoute) {
+        let isSidebarOpen = $('.side-navbar').hasClass('show');
+        if(isIndexRoute && isSidebarOpen) {
           this.showOrHideNavBar(true);
           $('.app-wrapper').removeClass('router-index');
         } else {

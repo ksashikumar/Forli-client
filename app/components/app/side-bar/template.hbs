@@ -3,7 +3,7 @@
     {{#paper-subheader}}Filter{{/paper-subheader}}
     {{#each staticFiters as |filter|}}
       {{#paper-item class="tag"}}
-        {{#link-to "index" (query-params filter=filter tag_ids=undefined)}}<p class="tag-item active">{{filter}}</p>{{/link-to}}
+        {{#link-to "index" (query-params filter=filter tag_ids=undefined) current-when="index"}}<p class="tag-item">{{filter}}</p>{{/link-to}}
       {{/paper-item}}
     {{/each}}
   {{/paper-list}}
@@ -24,7 +24,7 @@
   {{/paper-list}}
   <div class="ask-btn-wrapper">
   {{#link-to 'ask'}}
-    {{#paper-button raised=true primary=true}}Ask Question{{/paper-button}}
+    {{#paper-button raised=true primary=true class="m-0"}}Ask Question{{/paper-button}}
   {{/link-to}}
   </div>
 </div>

@@ -86,3 +86,15 @@
   }
 
 }
+@media (max-width: 599px) {
+  .forum-list {
+    .holder {
+    .list-right {
+      margin-top: 0.5rem;
+      .listinfo-holder {
+        margin-left: 0;
+      }
+    }
+    }
+  }
+}
