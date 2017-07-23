@@ -8,6 +8,7 @@ const {
 export default Component.extend({
   meta: {},
   store: service(),
+  staticFiters: ["Latest", "Trending", "Unanswered"], 
   tags: [],
   limit: 10,
   init() {
