@@ -1,24 +1,28 @@
+$search-width: 20rem;
 .quick-search-input {
-  width: 240px;
+  width: $search-width;
   outline: none;
-  padding-left: 10px;
+  border: 2px solid $text-dark;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: 0.25rem;
 }
 
 .quick-search-wrapper {
   position: absolute;
-  top: 27px;
-  border: 1px solid #eee;
-  width: 240px;
+  top: 28px;
+  width: $search-width;
   height: 300px;
-  color: #000;
+  color: $text-dark;
   overflow-y: scroll;
   background: #fff;
   list-style: none;
-  padding: 5px;
-
+  padding: 0.25rem;
+  box-shadow: 0 3px 5px rgba(0,0,0,.25);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
   li {
     padding: 5px;
-
     &.result-info {
       text-align: center;
       margin-top: 10px;
