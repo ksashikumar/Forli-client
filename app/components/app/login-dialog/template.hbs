@@ -1,0 +1,29 @@
+{{#if forli.showLoginDialog}}
+  {{#paper-dialog fullscreen=fullscreen origin=dialogOrigin}}
+    {{#paper-dialog-content}}
+
+          <div style="float:right; margin-top: -13px;margin-right: -16px;">
+            {{#paper-button iconButton=true onClick=(action "closeDialogWithParent" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+          </div>
+
+
+      {{#paper-form onSubmit=(action "basicSubmitAction") as |form|}}
+        <div class="layout-row" style="width: 250px; margin-left: 40px; margin-right: 40px; margin-top: 6px;">
+          <div class="layout-column flex-100" style="padding-top: 25px;">
+            {{#each errors as |message|}}
+              <div class="error" style="margin-bottom: 28px; font-size: smaller; color: red;">
+                {{message}}
+              </div>
+            {{/each}}
+            {{form.input label="Email" value=email onChange=(action (mut email)) type="email" customValidations=emailValidation}}
+            {{form.input label="Password" value=password onChange=(action (mut password)) required=true type="password" }}
+          </div>
+        </div>
+        <div class="layout-row" style="margin-left: 35px; margin-top: 15px; padding-bottom: 5px;">
+          {{#form.submit-button raised=true primary=true}}Submit{{/form.submit-button}}
+        </div>
+      {{/paper-form}}
+    {{/paper-dialog-content}}
+
+  {{/paper-dialog}}
+{{/if}}
