@@ -9,7 +9,7 @@ body {
   font-size: 16px;
   font-family: 'SourceSansPro', sans-serif;
   -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -50,4 +50,13 @@ md-icon.md-default-theme, md-icon {
 .app-loader {
   margin: 0 auto;
   margin-top: 100px;
+}
+
+@media (max-width: 599px) {
+  .app-wrapper {
+    padding-top: 60px;
+  }
+  .router-index {
+    margin: 0;
+  }
 }

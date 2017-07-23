@@ -20,4 +20,6 @@ export default Model.extend({
   similar: memberAction({ path: 'similar' }),
   upvote: memberAction({ path: 'upvote' }),
   downvote: memberAction({ path: 'downvote' }),
+  answer: memberAction({ path: 'answers' }),
+  reply: memberAction({ path: 'replies' }),
 });
