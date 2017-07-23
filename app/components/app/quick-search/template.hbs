@@ -14,9 +14,9 @@
         <li class="result-info"> Loading.. </li>
       {{else}}
         {{#if (and searchResults.lastSuccessful.value.discussions (not isTermPresent))}}
-          <li>Recent Search Results</li>
+          <li class="result-header">Recent Search Results</li>
         {{else if (not isTermPresent)}}
-          <li class="result-info"> Type to search.. </li>
+          <li class="result-info"> Start typing to search for questions... </li>
         {{/if}}
         {{#each searchResults.lastSuccessful.value.discussions as |discussion|}}
           <li>

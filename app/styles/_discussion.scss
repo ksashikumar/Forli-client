@@ -73,3 +73,13 @@
     color: $text-dark;
   }
 }
+
+.comments-wrapper {
+  .no-answers {
+    p {
+      color: $text-light;
+      padding: 2rem;
+      text-align: center;
+    }
+  }
+}

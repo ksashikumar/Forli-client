@@ -16,11 +16,11 @@ $app-search-width: 30rem;
   top: 28px;
   width: $quick-search-width;
   height: 300px;
-  color: $text-dark;
+  color: $text-grey-dark;
   overflow-y: scroll;
   background: #fff;
   list-style: none;
-  padding: 0.25rem;
+  padding: 0;
   word-break: break-word;
   box-shadow: 0 3px 5px rgba(0,0,0,.25);
   border-bottom-left-radius: 4px;
@@ -30,6 +30,16 @@ $app-search-width: 30rem;
     &.result-info {
       text-align: center;
       margin-top: 10px;
+      font-size: 1rem;
+      color: $text-light;
+    }
+    &.result-header {
+      font-size: 0.75rem;
+    text-transform: uppercase;
+    background: $app-bg;
+    color: $text-light;
+    font-weight: 600;
+    text-align: center;
     }
   }
 }

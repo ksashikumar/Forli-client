@@ -6,7 +6,7 @@
       </div>
       <h1 class="title">{{discussion.title}}</h1>
       <div class="author-wrapper">
-        {{app/author-bio user=userInfo.data}}
+        {{app/author-bio user=discussion.user}}
       </div>
       <div class="description">
         {{{discussion.description}}}
@@ -47,9 +47,13 @@
   <div class="layout-row layout-xs-column">
     <div class="flex-80 flex-offset-10">
       <div class="comment-wrapper">
+        {{#if (gt discussion.answers.length 0)}}
         {{#each discussion.answers as |answer|}}
           {{app/comment-holder commentAdded=commentAdded buttonText="Reply" answer=answer onReply=(action 'submitReply')}}
         {{/each}}
+        {{else}}
+        <div class="no-answers"><p>Be the first one to answer!</p></div>
+        {{/if}}
       </div>
     </div>
   </div>
