@@ -10,7 +10,6 @@
     </div>
     <div class="flex-initial">
       <div class="btn-wrapper pl-3">
-        {{log 'content' content.length}}
         {{#if (gte content.length 1)}}
           {{#paper-button onClick=(action 'onsuccess') class="comment-submit-btn" raised=true primary=true class="m-0"}}{{buttonText}}{{/paper-button}}
         {{else}}

@@ -37,18 +37,18 @@
   <div class="answers-banner">
     <div class="layout-row layout-xs-column">
       <div class="flex-80 flex-offset-10">
-        <h3>15 Answers</h3>
+        <h3>{{answers.length}} Answers</h3>
       </div>
     </div>
   </div>
 </div>
 
-<div class="comments-wrapper container-wrapper">
+<div class="comments-wrapper">
   <div class="layout-row layout-xs-column">
     <div class="flex-80 flex-offset-10">
       <div class="comment-wrapper">
-        {{#each answers as |answer|}}
-          {{app/comment-holder buttonText="Reply" answer=answer onReply=(action 'submitReply')}}
+        {{#each discussion.answers as |answer|}}
+          {{app/comment-holder commentAdded=commentAdded buttonText="Reply" answer=answer onReply=(action 'submitReply')}}
         {{/each}}
       </div>
       {{app/comment-input buttonText="Answer" content=content onsuccess=(action 'submitAnswer')}}

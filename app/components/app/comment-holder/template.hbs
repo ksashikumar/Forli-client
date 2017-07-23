@@ -4,36 +4,22 @@
     <div onClick={{action 'enableReply'}} class="comment-reply-btn">Reply</div>
   </div>
   <div class="answer">
-    <div class="vote-wrapper">{{app/vote-holder}}</div>
-    <div>
-      <h1>JavaScript Closures for Beginners</h1>
+    <div class="vote-wrapper">
+      {{app/vote-holder votes=votes voteAction=answer.voteAction upVote=(action 'upVote') downVote=(action 'downVote')}}
     </div>
-    <p>This page explains closures so that a programmer can understand them — using working JavaScript code. It is not for gurus
-      or functional programmers. Closures are not hard to understand once the core concept is grokked. However, they are
-      impossible to understand by reading any academic papers or academically oriented information about them!</p>
-    <h2>An Example of a Closure</h2>
-    <p>a closure is one way of supporting first-class functions; it is an expression that can reference variables within its
-      scope (when it was first declared), be assigned to a variable, be passed as an argument to a function, or be returned
-      as a function result. a closure is a stack frame which is allocated when a function starts its execution, and not freed
-      after the function returns (as if a 'stack frame' were allocated on the heap rather than the stack!).</p>
+    {{answer.content}}
   </div>
-  <div class="reply-wrapper">
-    <div class="reply">
-      <p>So can we say this for closures: whenever a function is declared inside a function, the outer function is in scope
-        for the inner function until the inner function is in scope! - <span class="author"><a href="#">Shibu</a></span>
-        <span class="time">{{paper-icon "access_time" size=12}} Apr 13, 2017</span>
-      </p>
+  {{#if replies}}
+    <div class="reply-wrapper">
+      {{#each replies as |reply|}}
+        <div class="reply">
+          <p>{{reply.content}} <span class="author"><a href="#">{{reply.user.name}}</a></span>
+            <span class="time">{{paper-icon "access_time" size=12}} {{moment-format reply.createdAt 'MMM DD, YYYY'}}</span>
+          </p>
+        </div>
+      {{/each}}
     </div>
-    <div class="reply">
-      <p>Whenever a function is declared inside a function, the outer function is in scope for the inner function until the
-        inner function is in scope! - <span class="author"><a href="#">Shibu</a></span><span class="time">{{paper-icon "access_time" size=12}} Apr 13, 2017</span></p>
-    </div>
-    <div class="reply">
-      <p>the outer function is in scope for the inner function until the inner function is in scope! - <span class="author"><a href="#">Shibu</a></span>
-        <span class="time">{{paper-icon "access_time" size=12}} Apr 13, 2017</span>
-      </p>
-    </div>
-  </div>
+  {{/if}}
   {{#if showReply}}
     {{app/comment-input direction="end" buttonText=buttonText content=replyContent onsuccess=(action 'submitReply')}}
   {{/if}}
