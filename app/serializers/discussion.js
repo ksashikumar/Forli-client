@@ -5,7 +5,7 @@ const { EmbeddedRecordsMixin } = DS;
 
 export default ApplicationSerializer.extend(EmbeddedRecordsMixin, {
   attrs: {
-    tags: { deserialize: 'records' }
+    answers: { deserialize: 'records' }
   }
   // },
   // normalize(model, hash) {

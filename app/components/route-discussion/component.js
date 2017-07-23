@@ -2,58 +2,23 @@ import Ember from 'ember';
 
 const {
   get,
-  computed
+  computed,
+  inject: { service }
 } = Ember;
 
 const upvoteActionState = 2;
 const downvoteActionState = 1;
 
 export default Ember.Component.extend({
+  store: service(),
   content: null,
   relatedQuestions: [],
   globalReplyBox: true,
-  answers: [
-    {
-      answer: {
-        content: "1-asdfasdf asdfkjasdf asdfaksdfnasdkfjasdkf nasdfkjna sfdkjna sdf adfskna dfkn",
-        user: {
-          userId:1,
-          name: 'Jack Daniels',
-          image: 'http://garden.zendesk.com/css-avatars/images/jz.png',
-          email: 'jack@forli.com' },
-      },
-      replies: [{
-        content: "Reply1",
-        date: "Sun Jul 23 2017 14:49:19 GMT+0530 (IST)"
-      },{
-        content: "Reply2",
-        date: "Sun Jul 23 2017 14:49:19 GMT+0530 (IST)"
-      }, {
-        content: "Reply3",
-        date: "Sun Jul 23 2017 14:49:19 GMT+0530 (IST)"
-      }]
-    },
-    {
-      answer: {
-        content: "2-asdfasdf asdfkjasdf asdfaksdfnasdkfjasdkf nasdfkjna sfdkjna sdf adfskna dfkn",
-        user: {
-          userId:1,
-          name: 'Jack Daniels',
-          image: 'http://garden.zendesk.com/css-avatars/images/jz.png',
-          email: 'jack@forli.com' },
-      },
-      replies: [{
-        content: "Reply1",
-        date: "Sun Jul 23 2017 14:49:19 GMT+0530 (IST)"
-      },{
-        content: "Reply2",
-        date: "Sun Jul 23 2017 14:49:19 GMT+0530 (IST)"
-      }, {
-        content: "Reply3",
-        date: "Sun Jul 23 2017 14:49:19 GMT+0530 (IST)"
-      }]
-    },
-  ],
+  commentAdded: false,
+  answerAdded: false,
+  answers: computed('discussion.answers.[]', 'answerAdded', function() {
+    return this.get('discussion.answers');
+  }),
   votes: computed('discussion.upvotesCount', 'discussion.downvotesCount', function() {
     return get(this, 'discussion.upvotesCount') - get(this, 'discussion.downvotesCount');
   }),
@@ -67,7 +32,6 @@ export default Ember.Component.extend({
     let currentDiscussion = this.get('discussion');
     currentDiscussion.similar().then((similarQuestions) => {
       let returnObj = get(similarQuestions, 'discussions');
-      // this.get('store').pushPayload(returnObj);
       this.set('relatedQuestions',returnObj);
     })
   },
@@ -83,17 +47,34 @@ export default Ember.Component.extend({
     this.set('discussion.voteAction', actionState);
   },
   actions: {
-    submitAnswer(comment) {
-      let currentDiscussion = this.get('discussion');
-      currentDiscussion.answer({
-        "content": comment
+    submitAnswer(content) {
+      this.set('answerAdded', false);
+      let discussionId = this.get('discussion.id');
+      let answer = this.get('store').createRecord('answer', {
+        discussionId,
+        content: content,
+      });
+      answer.save().then((result) => {
+        let discussion = this.get('discussion.answers');
+        let obj = result.get('data');
+        obj.id = result.get('id');
+        discussion.pushObject(obj);
+        this.set('content', null);
+        this.toggleProperty('answerAdded');
+      }).catch(()=>{
+        // console.log('do failure process')
       });
     },
-    submitReply(reply, answerId) {
-      let currentDiscussion = this.get('discussion');
-      currentDiscussion.reply({
-        "content": reply,
-        "answer_id": answerId
+    submitReply(comment, answerId) {
+      let reply = this.get('store').createRecord('reply', {
+        answerId,
+        content: comment
+      });
+      reply.save().then(() => {
+        this.set('content', null);
+        this.toggleProperty('answerAdded');
+      }).catch(()=>{
+        // console.log('do failure process')
       });
     },
     upVote() {
