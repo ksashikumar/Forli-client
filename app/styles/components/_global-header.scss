@@ -27,3 +27,14 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar) {
 .md-toolbar-tools h1, .md-toolbar-tools h2, .md-toolbar-tools h3 {
   font-size: 1.125rem;
 }
+
+.login-button {
+  line-height: 28px;
+  min-height: 28px;
+  min-width: 70px;
+  text-transform: capitalize;
+}
+
+.bring-back {
+  z-index: 1;
+}

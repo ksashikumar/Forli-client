@@ -82,6 +82,9 @@ md-list-item .md-list-item-inner>p {
   }
 }
 
+.bring-back {
+  z-index: 1;
+}
 @media (max-width: 599px) {
   .side-navbar {
       position: fixed;
@@ -98,3 +101,4 @@ md-list-item .md-list-item-inner>p {
     }
   }
 }
+
