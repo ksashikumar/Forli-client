@@ -1,0 +1,16 @@
+.routable-modal {
+  z-index: 99998;
+}
+
+.routable-modal--backdrop {
+  opacity: 0.93;
+  z-index: 99997;
+  background-color: #fff;
+}
+
+.routable-modal--dialog {
+  z-index: 99999;
+  max-width: 100%;
+  width: 80%;
+  height: 80%;
+}

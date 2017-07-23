@@ -1,0 +1,16 @@
+<div class="routable-modal--dialog">
+    <div class="routable-modal--content">
+        <div class="routable-modal--header">
+            {{routable-modal-close-button class="routable-modal--close"}}
+            <h4 class="routable-modal--title">Search Forli</h4>
+        </div>
+        <div class="routable-modal--body">
+          {{#unless isLoading}}
+            {{#if showResultsCheck}}
+              {{route-home discussion=searchResults}}
+            {{else if termPresent}}
+            {{/if}}
+          {{/unless}}
+        </div>
+    </div>
+</div>

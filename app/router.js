@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('ask');
   this.route('discussion', { path: '/d/:discussion_id' });
   this.route('tag-list');
+  this.route('search');
 });
 
 export default Router;

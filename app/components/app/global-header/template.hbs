@@ -8,9 +8,11 @@
       <h2 class="text-semibold">Forli</h2>
     {{/link-to}}
     <span class="flex"></span>
-    {{#paper-button iconButton=true}}
-      {{paper-icon "search"}}
-    {{/paper-button}}
+    {{#link-to "search"}}
+      {{#paper-button iconButton=true}}
+        {{paper-icon "search"}}
+      {{/paper-button}}
+    {{/link-to}}
     {{#link-to 'ask'}}
       {{#paper-button iconButton=true}}
         {{paper-icon "add_circle_outline"}}
