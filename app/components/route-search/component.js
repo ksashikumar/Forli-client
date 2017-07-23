@@ -8,10 +8,7 @@ const {
 } = Ember;
 
 export default Component.extend({
-  showResultsCheck: computed.and('resultsPresent', 'termPresent', 'pageMaxBound'),
-  pageMaxBound: computed('searchResults.meta.count', function() {
-    return get(this, 'page') <= Math.ceil(this.get('searchResults.meta.count') / this.get('perPage'));
-  }),
+  showResultsCheck: computed.and('resultsPresent', 'termPresent'),
   resultsPresent: computed.bool('searchResults.meta.count'),
   // Adding isLoading to prevent the jank in the UI due to the debounce timing
   isLoading: computed('term', 'limit', 'page', {
@@ -42,7 +39,7 @@ export default Component.extend({
       return value;
     }
   }),
-  termPresent: computed.gt('term.length', 1),
+  termPresent: computed.gt('term.length', 0),
   pagePresent: computed.gt('page', 1),
   didReceiveAttrs() {
     this._super(...arguments);

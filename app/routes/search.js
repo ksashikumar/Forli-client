@@ -15,7 +15,7 @@ export default Route.extend(performSearch, {
   model(params) {
     return RSVP.hash({
       params,
-      discussion: this.performSearch(params)
+      searchResults: this.performSearch(params)
     });
   }
 });

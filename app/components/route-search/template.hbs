@@ -1,13 +1,17 @@
-{{paper-input
-  class="flex-30"
+{{input
   label="Search Forli"
   value=term
-  onChange=(action 'debouncedSearch' (mut term))
-  onEnter=(action "searchOnEnter")
+  on-change=(action 'debouncedSearch' (mut term))
+  on-enter=(action "searchOnEnter")
 }}
 {{#unless isLoading}}
+  {{log 'loaded' resultsPresent termPresent pageMaxBound}}
   {{#if showResultsCheck}}
-    {{route-home discussion=searchResults}}
+    {{log 'results there' searchResults.discussions}}
+    <div class="forum-list-wrapper p-3">
+      {{route-home/forum-list data=searchResults.discussions}}
+    </div>
   {{else if termPresent}}
+    {{app/empty-state emptyText="No results found for your search"}}
   {{/if}}
 {{/unless}}
