@@ -17,4 +17,7 @@
       {{/paper-item}}
     {{/each}}
   {{/paper-list}}
+  {{#if showLinkToPage}}
+    {{#link-to 'search' (query-params term=term)}} View All Results {{/link-to}}
+  {{/if}}
 {{/unless}}
