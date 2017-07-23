@@ -25,7 +25,8 @@ export default Ember.Component.extend({
   init() {
       this._super(...arguments);
       window.scrollTo(0,0);
-      this.getSimilarQuestions()
+      this.getSimilarQuestions();
+      this.updateViewCount();
   },
 
   getSimilarQuestions() {
@@ -34,6 +35,10 @@ export default Ember.Component.extend({
       let returnObj = get(similarQuestions, 'discussions');
       this.set('relatedQuestions',returnObj);
     })
+  },
+  updateViewCount() {
+    let currentDiscussion = this.get('discussion');
+    currentDiscussion.updateViewCount();
   },
   handlePreviousVoteState(actionState) {
     switch(get(this, 'discussion.voteAction')) {

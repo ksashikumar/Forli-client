@@ -10,7 +10,7 @@ export default Model.extend({
   tags: attr(),
   categoryId: attr(),
   posts: attr(),
-  views: attr(),
+  viewCount: attr(),
   postsCount: attr(),
   createdAt: attr(),
   updatedAt: attr(),
@@ -20,5 +20,6 @@ export default Model.extend({
   similar: memberAction({ path: 'similar' }),
   upvote: memberAction({ path: 'upvote' }),
   downvote: memberAction({ path: 'downvote' }),
-  answers: attr()
+  answers: attr(),
+  updateViewCount: memberAction({ path: 'view' })
 });
