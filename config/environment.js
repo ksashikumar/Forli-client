@@ -52,7 +52,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.googleAnalytics = {
-      webPropertyId: 'process.env.ANALYTICS_KEY'
+      webPropertyId: process.env.ANALYTICS_KEY
     };
   }
 
