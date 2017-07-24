@@ -1,5 +1,5 @@
 <div class="vote-container">
-    <div class="vote vote-up {{if isUpVoted 'voted'}}" title="Upvote" onclick={{action "upVote"}}>{{paper-icon "keyboard_arrow_up" size=30}}</div>
+    <div data-balloon="Upvote" data-balloon-pos="up" class="vote vote-up {{if isUpVoted 'voted'}}" onclick={{action "upVote"}}>{{paper-icon "keyboard_arrow_up" size=30}}</div>
     <div class="vote-count">{{votes}}</div>
-    <div class="vote vote-down {{if isDownVoted 'voted'}}" title="Downvote" onclick={{action "downVote"}}>{{paper-icon "keyboard_arrow_down" size=30}}</div>
+    <div data-balloon="Downvote" data-balloon-pos="down" class="vote vote-down {{if isDownVoted 'voted'}}" onclick={{action "downVote"}}>{{paper-icon "keyboard_arrow_down" size=30}}</div>
 </div>

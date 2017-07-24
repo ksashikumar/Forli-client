@@ -23,5 +23,6 @@ export default Model.extend({
   upvote: memberAction({ path: 'upvote' }),
   downvote: memberAction({ path: 'downvote' }),
   updateViewCount: memberAction({ path: 'view' }),
-  answers: hasMany('answer')
+  answers: hasMany('answer'),
+  sentiment: attr()
 });

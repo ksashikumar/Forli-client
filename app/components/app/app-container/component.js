@@ -33,10 +33,10 @@ export default Component.extend({
     }
   },
   handleSearchClose(event) {
-    let isClickIsfromSearchHolder = $(event.target).parents('.search-wrapper').length;
-    if(isClickIsfromSearchHolder === 0) {
-      let clickIsFrom = $(event.target).parents('.global-search').length;
-      if (clickIsFrom) {
+    let ClickIsfromSearchHolder = $(event.target).parents('.search-wrapper').length;
+    if(ClickIsfromSearchHolder === 0) {
+      let clickIsFromSearchBtn = $(event.target).parents('.global-search').length;
+      if (clickIsFromSearchBtn) {
         this.toggleProperty('forli.searchEnabled')
       } else {
         this.set('forli.searchEnabled', false);

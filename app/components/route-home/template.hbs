@@ -3,7 +3,9 @@
     {{#if (gt discussion.content.length 0) }}
       <div class="home-wrapper">
         <div class="forum-list-wrapper p-3">
-        {{route-home/forum-list data=discussion}}
+          {{#each discussion as |item|}}
+            {{route-home/forum-list discussion=item}}
+          {{/each}}
         </div>
       </div>
     {{else}}

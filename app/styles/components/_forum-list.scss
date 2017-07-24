@@ -58,6 +58,31 @@
     font-size: 0.75rem;
     text-align: left;
     color: $text-grey-light;
+    position: relative;
+    .desc {
+      margin-left: 20px;
+      margin-top: -13px;
+    }
+    .senti-icon {
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 0px;
+    }
+    .senti-happy {
+      fill: $sentiment-happy;
+    }
+    .senti-sad {
+      fill: $sentiment-sad;
+    }
+    .senti-neutral {
+      fill: $sentiment-neutral;
+    }
+    .senti-holder {
+      display: block;
+      width: 13.3px;
+      height: 13.3px;
+    }
   }
 
   .list-caption {
@@ -74,15 +99,8 @@
   }
 
   .list-like-count {
-    color: $text-light;
+    color: $text-dark;
     font-size: 0.875rem;
-  }
-
-  .list-like-color {
-    md-icon.md-default-theme, md-icon {
-    opacity: 0.5;
-
-    }
   }
 
 }
