@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/ksashikumar/Forli-client.png)](https://codeclimate.com/github/ksashikumar/Forli-client)
+
 # forli
 
 This README outlines the details of collaborating on this Ember application.
