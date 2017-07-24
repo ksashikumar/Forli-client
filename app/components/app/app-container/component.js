@@ -14,8 +14,8 @@ export default Component.extend({
   },
   handleBurgerMenu(event) {
     let routerName = Ember.getOwner(this).lookup('controller:application').currentPath;
-    let burgerMenu = $(event.target).parents('.burger-menu');
-    if(burgerMenu.length) {
+    let burgerMenu = $(event.target).parents('.burger-menu').length;
+    if(burgerMenu) {
       if(routerName === 'index') {
         let isIndexRoute = $('.app-wrapper').hasClass('router-index');
         let isSidebarOpen = $('.side-navbar').hasClass('show');

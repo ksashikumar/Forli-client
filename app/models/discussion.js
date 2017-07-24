@@ -6,6 +6,7 @@ import { memberAction } from 'ember-api-actions';
 export default Model.extend({
   title: attr('string'),
   description: attr('string'),
+  descriptionText: attr('string'),
   userId: attr(),
   user: attr(),
   tags: attr(),

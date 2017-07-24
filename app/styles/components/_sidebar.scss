@@ -102,17 +102,11 @@ md-list-item .md-list-item-inner>p {
 }
 @media (max-width: 599px) {
   .side-navbar {
-      position: fixed;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     margin-top: 60px;
-  }
-  .side-navbar.sidebar-state-index {
-    display: none;
-    &.show {
-      display: block;
-    }
   }
 }

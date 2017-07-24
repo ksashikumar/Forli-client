@@ -15,6 +15,18 @@ export default Component.extend({
   filterParam: computed.reads('filters.filter'),
   filterId: computed.reads('filters.tag_ids'),
   hasFilter: computed.or('filterParam','filterId'),
+  sideBarDefaultViewState: computed('routeName', function() {
+    let routeName = this.get('routeName');
+    let minWidth = 599;
+    let winWidth = window.outerWidth;
+    if (routeName === 'sidebar-state-index' && winWidth < minWidth) {
+      return "hide";
+    } else if (routeName === 'sidebar-state-index') {
+      return "show";
+    } else {
+      return "notindex";
+    }
+  }),
   init() {
     this.set('tags', []);
     this._super(...arguments);
@@ -24,10 +36,5 @@ export default Component.extend({
       let meta = result.get('meta');
       this.set('meta', meta);
     });
-  },
-  actions: {
-    askQuestion() {
-      alert('Perform ask');
-    }
   }
 });
