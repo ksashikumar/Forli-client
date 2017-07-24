@@ -2,15 +2,19 @@ import Ember from 'ember';
 
 const {
   Component,
+  computed,
   inject: { service }
 } = Ember;
 
 export default Component.extend({
   meta: {},
   store: service(),
-  staticFiters: ["latest", "trending", "unanswered"], 
+  staticFiters: ["latest", "trending", "unanswered"],
   tags: [],
   limit: 10,
+  bringBack: computed('forli.showLoginDialog', 'forli.showSigninDialog',function() {
+    return this.get('forli').showLoginDialog || this.get('forli').showSigninDialog
+  }),
   init() {
     this.set('tags', []);
     this._super(...arguments);

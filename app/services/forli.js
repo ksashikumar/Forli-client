@@ -7,6 +7,7 @@ const { Service } = Ember;
 export default Service.extend({
   headerKeys: ['client', 'access-token', 'token-type', 'expiry', 'uid'],
   showLoginDialog: false,
+  showSigninDialog: false,
   userLoggedIn: false,
   headers: null,
   userName: null,
