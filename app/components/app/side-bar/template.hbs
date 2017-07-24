@@ -1,10 +1,17 @@
 <div class="side-navbar {{routeName}} {{if forli.showLoginDialog "bring-back"}}">
   {{#paper-list class="filter-list"}}
-    {{#paper-subheader}}Filter{{/paper-subheader}}
+    {{#paper-subheader}}
+      Filter
+      {{#if hasFilter}}
+        {{#link-to "index" (query-params tag_ids=undefined filter=undefined) class="reset-sidebar"}}Reset{{/link-to}}
+      {{/if}}
+    {{/paper-subheader}}
     {{#each staticFiters as |filter|}}
-      {{#paper-item class="tag"}}
-        {{#link-to "index" (query-params filter=filter tag_ids=undefined) current-when="index"}}<p class="tag-item">{{filter}}</p>{{/link-to}}
-      {{/paper-item}}
+      {{#link-to "index" (query-params filter=filter tag_ids=undefined) current-when="index"}}
+        {{#paper-item class=(if (eq filter filterParam) "tag menu-active" "tag")}}
+          <p class="tag-item">{{filter}}</p>
+        {{/paper-item}}
+      {{/link-to}}
     {{/each}}
   {{/paper-list}}
   {{#paper-list class="filter-list"}}
@@ -12,9 +19,11 @@
     {{#if tags.isLoaded}}
       {{#if (gt tags.length 0)}}
         {{#each tags as |item|}}
-          {{#paper-item class="tag"}}
-            {{#link-to "index" (query-params tag_ids=item.id)}}<p class="tag-item tag-{{item.color}}">{{item.name}}</p>{{/link-to}}
-          {{/paper-item}}
+          {{#link-to "index" (query-params tag_ids=item.id)}}
+            {{#paper-item class=(if (eq filterId item.id) "tag menu-active" "tag")}}
+              <p class="tag-item tag-{{item.color}}">{{item.name}}</p>
+            {{/paper-item}}
+          {{/link-to}}
         {{/each}}
       {{else}}
         <div class="no-data-t">Tags not available!!!</div>

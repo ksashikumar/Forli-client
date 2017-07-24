@@ -82,6 +82,21 @@ md-list-item .md-list-item-inner>p {
   }
 }
 
+.menu-active {
+  background: #f0f8ff;
+  .tag-item {
+    color: black;
+    font-weight: 600;
+  }
+}
+
+.reset-sidebar {
+  position: absolute;
+  right: 0px;
+  top: 1px;
+  font-size: 13px;
+}
+
 .bring-back {
   z-index: 1;
 }
@@ -101,4 +116,3 @@ md-list-item .md-list-item-inner>p {
     }
   }
 }
-

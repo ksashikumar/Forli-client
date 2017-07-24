@@ -2,15 +2,19 @@ import Ember from 'ember';
 
 const {
   Component,
+  computed,
   inject: { service }
 } = Ember;
 
 export default Component.extend({
   meta: {},
   store: service(),
-  staticFiters: ["latest", "trending", "unanswered"], 
+  staticFiters: ["latest", "trending", "unanswered"],
   tags: [],
   limit: 10,
+  filterParam: computed.reads('filters.filter'),
+  filterId: computed.reads('filters.tag_ids'),
+  hasFilter: computed.or('filterParam','filterId'),
   init() {
     this.set('tags', []);
     this._super(...arguments);
