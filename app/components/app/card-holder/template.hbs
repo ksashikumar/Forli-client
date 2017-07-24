@@ -4,6 +4,6 @@
     {{#link-to 'discussion' discussion.id class="cursor-pointer" target=target}}
       <h1 class="ellipsis">{{discussion.title}}</h1>
     {{/link-to}}
-    {{app/author-bio user=discussion.user}}
+    {{app/author-bio user=discussion.user timestamp=discussion.created_at}}
   </div>
 </div>

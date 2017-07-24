@@ -6,7 +6,7 @@
       </div>
       <h1 class="title">{{discussion.title}}</h1>
       <div class="author-wrapper">
-        {{app/author-bio user=discussion.user}}
+        {{app/author-bio user=discussion.user timestamp=discussion.createdAt}}
       </div>
       <div class="description">
         {{{discussion.description}}}

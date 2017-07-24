@@ -5,8 +5,11 @@
     <div class="md-list-item-text">
       <h3 class="name text-semibold">{{user.name}}</h3>
       <div class="inner-container">
-          <span class="meta mr-3"><span class="pr-1">{{paper-icon "access_time" size=12}}</span><span class="meta-sub">2 days ago</span></span>
-          <!-- <span class="meta mr-3"><span class="pr-1">{{paper-icon "drafts" size=12}}</span><span class="meta-sub">Draft</span></span> -->
+        {{#if timestamp}}
+          <span class="meta mr-3">
+            <span class="pr-1">{{paper-icon "access_time" size=12}}</span><span class="meta-sub">{{moment-format timestamp 'MMM-DD-YYYY, hh:mm A'}}</span>
+          </span>
+        {{/if}}
       </div>
     </div>
   {{/paper-item}}
