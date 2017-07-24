@@ -28,11 +28,11 @@ export default Component.extend({
     let sentimentScore = this.get('discussion.sentiment');
     let message = '';
     if (sentimentScore >= -1 && sentimentScore < -0.3) {
-      message = (sentimentScore*-100)+"% Sad";
+      message = (sentimentScore*-100).toFixed(2)+"% Sad";
     } else if(sentimentScore >= -0.3 && sentimentScore <= 0.3) {
       message ="neutral";
     } else {
-      message = (sentimentScore*100)+"% Happy";
+      message = (sentimentScore*100).toFixed(2)+"% Happy";
     }
     return message;
   }),
