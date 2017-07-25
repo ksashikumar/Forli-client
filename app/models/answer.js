@@ -12,5 +12,6 @@ export default DS.Model.extend({
   voteAction: attr(),
   upvote: memberAction({ path: 'upvote' }),
   downvote: memberAction({ path: 'downvote' }),
-  user: attr()
+  user: attr(),
+  created_at: attr()
 });
