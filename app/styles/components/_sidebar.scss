@@ -17,15 +17,15 @@
   }
   md-list-item.md-no-proxy,
   md-list-item .md-no-style {
-    padding: 0px 32px;
+    padding: 0px 2rem;
   }
   md-list-item,
   md-list-item .md-list-item-inner {
-    min-height: 32px;
+    min-height: 2rem;
   }
   md-list-item::before,
   md-list-item .md-list-item-inner::before {
-    min-height: 32px;
+    min-height: 2rem;
   }
   .tag {
     a,
@@ -48,7 +48,7 @@ md-list-item.md-3-line>.md-no-style {
 .ask-btn-wrapper {
   a {
     display: block;
-    margin: 16px 32px;
+    margin: 1rem 2rem;
   }
   button {
     display: block;
@@ -83,18 +83,20 @@ md-list-item .md-list-item-inner>p {
 }
 
 .menu-active {
-  background: #f0f8ff;
+  background: lighten($app-primary, 37%);
   .tag-item {
-    color: black;
+    color: $text-grey-dark;
+    border-color: $text-grey-dark;
     font-weight: 600;
   }
 }
 
 .reset-sidebar {
   position: absolute;
-  right: 0px;
-  top: 1px;
-  font-size: 13px;
+  right: 0;
+  top: 0;
+  font-size: 0.625rem;
+  text-transform: capitalize;
 }
 
 .bring-back {
