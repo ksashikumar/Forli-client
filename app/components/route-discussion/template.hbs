@@ -18,21 +18,6 @@
   </div>
 </div>
 
-{{#if (gt relatedQuestions.length 0) }}
-<div class="related-wrapper container-wrapper">
-  <div class="layout-row layout-xs-column">
-    <div class="flex-80 flex-offset-10">
-      <h4 class="container-title">Related Questions</h4>
-      <div class="card-wrapper">
-        <div class="layout-row">
-          {{#each relatedQuestions as |relatedQuestion|}} {{app/card-holder discussion=relatedQuestion target='_blank'}} {{/each}}
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{{/if}}
-
 <div class="answers-wrapper">
   <div class="answers-banner">
     <div class="layout-row layout-xs-column">
@@ -62,3 +47,18 @@
 <div class="answer-input-wrapper">
       {{app/comment-input buttonText="Answer" content=content direction="center" onsuccess=(action 'submitAnswer')}}
 </div>
+
+{{#if (gt relatedQuestions.length 0) }}
+<div class="related-wrapper container-wrapper">
+  <div class="layout-row layout-xs-column">
+    <div class="flex-80 flex-offset-10">
+      <h4 class="container-title">Related Questions</h4>
+      <div class="card-wrapper">
+        <div class="layout-row">
+          {{#each relatedQuestions as |relatedQuestion|}} {{app/card-holder discussion=relatedQuestion target='_blank'}} {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}
