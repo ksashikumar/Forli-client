@@ -1,38 +1,39 @@
-
-  <div class="forum-list">
-    {{app/avatar-holder src=discussion.user.image name=discussion.user.name }}
-    <div class="holder layout-row layout-xs-column">
-      <div class="list-left flex-75 flex-xs-100">
-        {{app/tag-list tagList=discussion.tags}}
-        <div class="form-list-title mt-2 mb-2 text-semibold ellipsis">{{#link-to 'discussion' discussion.id}}{{discussion.title}}{{/link-to}}</div>
-        <div class="form-list-desc">
-            <div class="sentiment-analysis">
-              <span class="senti-holder" data-balloon={{sentimentText}} data-balloon-pos="down">
-                {{svg-jar sentimentAnalysis class=(concat "senti-icon senti-" sentimentAnalysis)}}
-              </span>
-            </div>
-          <div class="desc ellipsis">{{truncate discussion.descriptionText}}</div>
+<div class="forum-list">
+  {{app/avatar-holder src=discussion.user.image name=discussion.user.name }}
+  <div class="sentiment-wrapper">
+    <div class="sentiment-container">
+    <div class="sentiment-analysis">
+      <span class="senti-holder" data-balloon={{sentimentText}} data-balloon-pos="right">
+              {{svg-jar sentimentAnalysis class=(concat "senti-icon senti-" sentimentAnalysis) width="16px"}}
+          </span>
+    </div>
+    </div>
+  </div>
+  <div class="holder layout-row layout-xs-column">
+    <div class="list-left flex-75 flex-xs-100">
+      {{app/tag-list tagList=discussion.tags}}
+      <div class="form-list-title mt-2 mb-2 text-semibold ellipsis">{{#link-to 'discussion' discussion.id}}{{discussion.title}}{{/link-to}}</div>
+      <div class="form-list-desc ellipsis">{{truncate discussion.descriptionText}}</div>
+    </div>
+    <div class="list-right flex-25 flex-xs-100">
+      <div class="listinfo-holder display-inline">
+        <div class="item">
+          <span class="list-caption">Asked by:</span>
+          <span class="list-value">{{discussion.user.name}}</span>
+        </div>
+        <div class="item">
+          <span class="list-caption">Created At:</span>
+          <span class="list-value">{{moment-format discussion.createdAt 'MMM-DD-YYYY, hh:mm A'}}</span>
+        </div>
+        <div class="item">
+          <span class="list-caption">Answers:</span>
+          <span class="list-value">{{discussion.answersCount}}</span>
         </div>
       </div>
-      <div class="list-right flex-25 flex-xs-100">
-        <div class="listinfo-holder display-inline">
-          <div class="item">
-            <span class="list-caption">Asked by:</span>
-            <span class="list-value">{{discussion.user.name}}</span>
-          </div>
-          <div class="item">
-            <span class="list-caption">Created At:</span>
-            <span class="list-value">{{moment-format discussion.createdAt 'MMM-DD-YYYY, hh:mm A'}}</span>
-          </div>
-          <div class="item">
-            <span class="list-caption">Answers:</span>
-            <span class="list-value">{{discussion.answersCount}}</span>
-          </div>
-        </div>
-        <div class="like-holder display-inline" data-balloon="View Count" data-balloon-pos="left">
-            <div class="display-inline list-like-color">{{paper-icon "remove_red_eye" size=18}}</div>
-            <div class="display-inline"><span class="list-like-count">{{discussion.viewCount}}</span></div>
-        </div>
+      <div class="like-holder display-inline" data-balloon="View Count" data-balloon-pos="top">
+        <div class="display-inline list-like-color">{{paper-icon "remove_red_eye" size=18}}</div>
+        <div class="display-inline"><span class="list-like-count">{{discussion.viewCount}}</span></div>
       </div>
     </div>
   </div>
+</div>

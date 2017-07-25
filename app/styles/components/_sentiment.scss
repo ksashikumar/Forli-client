@@ -1,0 +1,25 @@
+.sentiment-analysis {
+    .senti-icon {
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      top: 0px;
+    }
+    .senti-happy {
+      fill: $sentiment-happy;
+    }
+    .senti-sad {
+      fill: $sentiment-sad;
+    }
+    .senti-neutral {
+      fill: $sentiment-neutral;
+    }
+    .senti-holder {
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      margin: auto;
+      background: #fff;
+      border-radius: 50%;
+    }
+}

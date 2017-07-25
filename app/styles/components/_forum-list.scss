@@ -31,6 +31,15 @@
   line-height: 50px;
 }
 
+.sentiment-wrapper {
+  position: relative;
+  .sentiment-container {
+    position: absolute;
+    top: 0.5rem;
+    left: -0.25rem;
+  }
+}
+
   .holder {
     margin-left: 65px;
     .list-right {
@@ -63,26 +72,7 @@
       margin-left: 20px;
       margin-top: -13px;
     }
-    .senti-icon {
-      width: 16px;
-      height: 16px;
-      position: absolute;
-      top: 0px;
-    }
-    .senti-happy {
-      fill: $sentiment-happy;
-    }
-    .senti-sad {
-      fill: $sentiment-sad;
-    }
-    .senti-neutral {
-      fill: $sentiment-neutral;
-    }
-    .senti-holder {
-      display: block;
-      width: 13.3px;
-      height: 13.3px;
-    }
+    
   }
 
   .list-caption {
