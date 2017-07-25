@@ -23,7 +23,6 @@ export default Model.extend({
   similar: memberAction({ path: 'similar' }),
   upvote: memberAction({ path: 'upvote' }),
   downvote: memberAction({ path: 'downvote' }),
-  updateViewCount: memberAction({ path: 'view' }),
   answers: hasMany('answer'),
   sentiment: attr()
 });
