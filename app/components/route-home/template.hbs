@@ -6,6 +6,7 @@
           {{#each discussion as |item|}}
             {{route-home/forum-list discussion=item}}
           {{/each}}
+          {{app/lazy-loading page=page loadMore=(action 'loadMore') loadedCount=loadedCount totalCount=totalCount perPage=perPage}}
         </div>
       </div>
     {{else}}
