@@ -16,15 +16,15 @@ export default Component.extend({
     let routerName = Ember.getOwner(this).lookup('controller:application').currentPath;
     let burgerMenu = $(event.target).parents('.burger-menu').length;
     if(burgerMenu) {
-      if(routerName === 'index') {
-        let isIndexRoute = $('.app-wrapper').hasClass('router-index');
+      if(routerName === 'index' || routerName === 'home') {
+        let isIndexRoute = $('.app-wrapper').hasClass('router-home');
         let isSidebarOpen = $('.side-navbar').hasClass('show');
         if(isIndexRoute && isSidebarOpen) {
           this.showOrHideNavBar(true);
-          $('.app-wrapper').removeClass('router-index');
+          $('.app-wrapper').removeClass('router-home');
         } else {
           this.showOrHideNavBar(false);
-          $('.app-wrapper').addClass('router-index');
+          $('.app-wrapper').addClass('router-home');
         }
       } else {
         let navIsVisible = $('.side-navbar').hasClass('show');

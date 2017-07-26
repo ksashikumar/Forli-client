@@ -3,11 +3,11 @@
     {{#paper-subheader}}
       Filter
       {{#if hasFilter}}
-        {{#link-to "index" (query-params tag_ids=undefined filter=undefined) class="reset-sidebar"}}RESET{{/link-to}}
+        {{#link-to "home" (query-params tag_ids=undefined filter=undefined) class="reset-sidebar"}}RESET{{/link-to}}
       {{/if}}
     {{/paper-subheader}}
     {{#each staticFiters as |filter|}}
-      {{#link-to "index" (query-params filter=filter tag_ids=undefined) current-when="index"}}
+      {{#link-to "home" (query-params filter=filter tag_ids=undefined) current-when="home"}}
         {{#paper-item class=(if (eq filter filterParam) "tag menu-active" "tag")}}
           <p class="tag-item">{{filter}}</p>
         {{/paper-item}}
@@ -19,7 +19,7 @@
     {{#if tags.isLoaded}}
       {{#if (gt tags.length 0)}}
         {{#each tags as |item|}}
-          {{#link-to "index" (query-params tag_ids=item.id)}}
+          {{#link-to "home" (query-params tag_ids=item.id)}}
             {{#paper-item class=(if (eq filterId item.id) "tag menu-active" "tag")}}
               <p class="tag-item tag-{{item.color}}">{{item.name}}</p>
             {{/paper-item}}

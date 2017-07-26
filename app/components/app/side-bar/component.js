@@ -19,12 +19,12 @@ export default Component.extend({
     let routeName = this.get('routeName');
     let minWidth = 599;
     let winWidth = window.outerWidth;
-    if (routeName === 'sidebar-state-index' && winWidth < minWidth) {
+    if (routeName === 'sidebar-state-home' && winWidth < minWidth) {
       return "hide";
-    } else if (routeName === 'sidebar-state-index') {
+    } else if (routeName === 'sidebar-state-home') {
       return "show";
     } else {
-      return "notindex";
+      return "nothome";
     }
   }),
   init() {

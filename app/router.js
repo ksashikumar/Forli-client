@@ -8,6 +8,7 @@ const Router = Ember.Router.extend(googlePageview, {
 });
 
 Router.map(function() {
+  this.route('home', { path: '/' });
   this.route('ask');
   this.route('discussion', { path: '/d/:discussion_id' });
   this.route('tag-list');
