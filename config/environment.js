@@ -2,6 +2,9 @@
 
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: {
+      'connect-src': "*"
+    },
     modulePrefix: 'forli',
     environment: environment,
     rootURL: '/',
@@ -37,6 +40,10 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+  }
+
+  ENV['ember-simple-auth'] = {
+    routeIfAlreadyAuthenticated: 'home'
   }
 
   if (environment === 'test') {

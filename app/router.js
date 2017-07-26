@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('discussion', { path: '/d/:discussion_id' });
   this.route('tag-list');
   this.route('search');
+  this.route('login');
 });
 
 export default Router;

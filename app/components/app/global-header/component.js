@@ -2,18 +2,18 @@ import Ember from 'ember';
 
 const {
   Component,
-  inject,
-  computed
+  inject
 } = Ember;
 
+const { service } = Ember.inject;
+
 export default Component.extend({
+  currentUser: service('current-user'),
+  session: service('session'),
   forli: inject.service('forli'),
-  hasUserSession: computed(function() {
-    return this.get('forli').isUserLoggedIn();
-  }),
   actions: {
-    promptDialog() {
-      this.set('forli.showLoginDialog', true);
+   logout() {
+      this.get('session').invalidate();
     }
   }
 });

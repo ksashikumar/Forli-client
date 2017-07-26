@@ -20,12 +20,14 @@
         {{paper-icon "add_circle_outline"}}
       {{/paper-button}}
     {{/link-to}}
-    {{#if forli.userLoggedIn}}
-      {{#paper-button iconButton=true}}
+    {{#if currentUser.user}}
+      {{#paper-button iconButton=true onClick=(action "logout")}}
         {{paper-icon "account_circle"}}
       {{/paper-button}}
     {{else}}
-      {{#paper-button raised=true primary=true class="login-button" onClick=(action "promptDialog")}}log in{{/paper-button}}
+     {{#link-to 'login'}}
+        {{#paper-button raised=true primary=true class="login-button"}}Login{{/paper-button}}
+      {{/link-to}}
     {{/if}}
   {{/paper-toolbar-tools}}
 {{/paper-toolbar}}

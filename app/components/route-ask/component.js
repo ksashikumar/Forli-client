@@ -8,6 +8,7 @@ const {
 
 export default Component.extend({
   store: service(),
+  currentUser: service('current-user'),
   editorContent: '',
   tagList: ['JavaScript', 'HTML', 'CSS'],
   tags: [],
@@ -27,13 +28,13 @@ export default Component.extend({
       }
     },
     basicSubmitAction() {
-      let userData = this.userInfo.data;
+      let userData = this.get('currentUser.user')
       let store = this.get('store');
       let tags = this.get('tags');
       let discussion = store.createRecord('discussion', {
         title: this.get('title'),
         description: this.get('editorContent'),
-        userId: userData.userId,
+        userId: userData.id,
         tags: tags
         // TODO: If needed, We'll enable this feature
         // categoryId: '1'

@@ -37,16 +37,24 @@
           {{app/comment-holder commentAdded=commentAdded buttonText="Reply" answer=answer onReply=(action 'submitReply')}}
         {{/each}}
         {{else}}
-        <div class="no-answers"><p>Be the first one to answer!</p></div>
+        <div class="no-answers">
+          {{#if currentUser.user}}
+            <p>Be the first one to answer!</p>
+          {{else}}
+            <p>Please {{#link-to 'login'}}login{{/link-to}} to answer!</p>
+          {{/if}}
+        </div>
         {{/if}}
       </div>
     </div>
   </div>
 </div>
 
-<div class="answer-input-wrapper">
-      {{app/comment-input buttonText="Answer" content=content direction="center" onsuccess=(action 'submitAnswer')}}
-</div>
+{{#if currentUser.user}}
+  <div class="answer-input-wrapper">
+    {{app/comment-input buttonText="Answer" content=content direction="center" onsuccess=(action 'submitAnswer')}}
+  </div>
+{{/if}}
 
 {{#if (gt relatedQuestions.length 0) }}
 <div class="related-wrapper container-wrapper">

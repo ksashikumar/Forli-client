@@ -11,6 +11,7 @@ const downvoteActionState = 1;
 
 export default Ember.Component.extend({
   store: service(),
+  currentUser: service('current-user'),
   content: null,
   relatedQuestions: [],
   globalReplyBox: true,

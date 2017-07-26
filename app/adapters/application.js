@@ -1,25 +1,9 @@
 import ActiveModelAdapter from 'active-model-adapter';
-import Ember from 'ember';
-import DS from 'ember-data';
+import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
-const { inject, computed } = Ember;
-const { InvalidError, errorsHashToArray } = DS;
-
-export default ActiveModelAdapter.extend({
+export default ActiveModelAdapter.extend(DataAdapterMixin, {
+  authorizer: 'authorizer:devise',
   host: 'https://forli-api.herokuapp.com',
-  //host: 'http://localhost:3000',
-  namespace: "api/v1",
-  forli: inject.service('forli'),
-  headers: computed('forli.headers', function() {
-    return this.get('forli.headers');
-  }),
-  handleResponse(status, headers, payload) {
-    if (status === 400 && payload.errors) {
-      let parseError = errorsHashToArray(payload.errors);
-      return new InvalidError(parseError);
-    } else {
-      this.get('forli').setHeaders(headers);
-      return this._super(...arguments);
-    }
-  }
+  // host: 'http://localhost:3000',
+  namespace: "api/v1"
 });
