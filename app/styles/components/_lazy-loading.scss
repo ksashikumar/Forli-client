@@ -58,7 +58,7 @@
 
   .shine {
     background: #f6f7f8;
-    background-image: linear-gradient(to right, rgba(209, 209, 209, 0.22) 0%, rgba(0, 0, 0, 0.09) 20%, #f6f7f8 40%, #f6f7f8 100%);
+    background-image: linear-gradient(to right, rgba(209, 209, 209, 0.22) 0%, rgba(0, 0, 0, 0.05) 20%, #f6f7f8 40%, #f6f7f8 100%);
     background-repeat: no-repeat;
     background-size: 800px 104px;
     display: block;
@@ -86,7 +86,7 @@
 
       .holder {
         margin-left: 65px;
-        margin-top: -10px;
+        margin-top: -5px;
         .one {
           width: 100px;
         }
@@ -97,7 +97,7 @@
     }
 
     lines {
-      height: 10px;
+      height: 7px;
       margin-top: 10px;
       width: 100%;
     }
