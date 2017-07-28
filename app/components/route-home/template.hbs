@@ -1,5 +1,5 @@
 <div class="route-home">
-  {{#if (or discussion.isLoaded)}}
+  {{#if (and discussion.isLoaded shimmer)}}
     {{#if (gt discussion.content.length 0) }}
       <div class="home-wrapper">
         <div class="forum-list-wrapper p-3">
@@ -13,6 +13,6 @@
       {{app/empty-state}}
     {{/if}}
   {{else}}
-    {{app/app-loader level2=true}}
+    {{app/loader-shimmer}}
   {{/if}}
 </div>
