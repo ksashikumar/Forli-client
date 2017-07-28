@@ -28,7 +28,7 @@
           <li class="result-info"> No Results Found </li>
         {{/each}}
         {{#if showLinkToPage}}
-          <li class="result-header"> {{#link-to 'search' (query-params term=term)}} View All Results {{/link-to}} </li>
+          <li class="result-header"> {{#link-to 'search' (query-params term=term page=1)}} View All Results {{/link-to}} </li>
         {{/if}}
       {{/if}}
     </ul>
