@@ -9,7 +9,11 @@ const {
 
 export default Component.extend({
   showResultsCheck: computed.and('resultsPresent', 'termPresent'),
-  resultsPresent: computed.bool('searchResults.meta.count'),
+  resultsPresent: computed.bool('searchResults.discussions.length'),
+  loadedCount: computed('page', 'limit', function() {
+    return get(this, 'page') * get(this, 'limit');
+  }),
+  totalCount: computed.reads('searchResults.meta.count'),
   // Adding isLoading to prevent the jank in the UI due to the debounce timing
   isLoading: computed('term', 'limit', 'page', {
     get() {
@@ -48,12 +52,12 @@ export default Component.extend({
   setSearchRoute(persistPage = false) {
     let router = get(this, 'router');
     let term = get(this, 'term');
-    let page = get(this, 'pagePresent') && persistPage ? get(this, 'page') : 1;
-    let limit = get(this, 'limit');
+    let page = (get(this, 'pagePresent') && persistPage ? get(this, 'page') : 1).toString();
+    // let limit = get(this, 'limit');
     let queryParams = {
       term,
-      page,
-      limit
+      // limit,
+      page
     };
     if (JSON.stringify(queryParams) === JSON.stringify(get(this, 'searchParams'))) {
       router._routerMicrolib.refresh();
@@ -69,6 +73,7 @@ export default Component.extend({
       this.setSearchRoute();
     },
     setSearchPage() {
+      this.set('page', (this.get('page')+1));
       this.setSearchRoute(true);
     },
     setSearchLimit() {
