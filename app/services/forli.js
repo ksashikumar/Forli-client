@@ -15,7 +15,7 @@ export default Service.extend({
   init() {
     this.appInfo = Forli.getAppInfo();
     this.headers = Forli.getHeaders();
-    this.set('userLoggedIn', this.appInfo.userSignedIn);
+    this.set('userLoggedIn', true);
   },
   setHeaders(responseHeaders) {
     let headers = {};

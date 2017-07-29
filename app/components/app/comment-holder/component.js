@@ -43,14 +43,16 @@ export default Ember.Component.extend({
   actions: {
     upVote() {
       let currentAnswer = this.get('answer');
-      currentAnswer.upvote().then(() => {
+      let discussionId = this.get('answer.discussionId');
+      currentAnswer.upvote({ discussion_id: discussionId }).then(() => {
         this.incrementProperty('answer.upvotesCount');
         this.handlePreviousVoteState(upvoteActionState);
       })
     },
     downVote() {
       let currentAnswer = this.get('answer');
-      currentAnswer.downvote().then(() => {
+      let discussionId = this.get('answer.discussionId');
+      currentAnswer.downvote({ discussion_id: discussionId }).then(() => {
         this.incrementProperty('answer.downvotesCount');
         this.handlePreviousVoteState(downvoteActionState);
       })
