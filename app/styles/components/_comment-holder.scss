@@ -1,7 +1,7 @@
 .comment {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   padding-top: 1rem;
-  min-height: 10rem;
+  min-height: 12rem;
   padding-bottom: 1rem;
   .answer {
     position: relative;
@@ -26,6 +26,25 @@
       position: absolute;
       top: 0;
       left: -3rem;
+      .correct {
+          cursor: pointer;
+          margin-left: 0.375rem;
+          &:hover {
+            md-icon.md-default-theme, md-icon {
+              color: darken($app-primary, 10%);
+            }
+          }
+          &.selected, &.selected:hover{
+            cursor: default;
+            md-icon.md-default-theme, md-icon {
+                color: $app-success;
+            }
+          }
+      }
+    }
+    .info-left,
+    .info-right {
+      float: left;
     }
   }
 }

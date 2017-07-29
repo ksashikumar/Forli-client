@@ -16,8 +16,16 @@ export default Ember.Component.extend({
   globalReplyBox: true,
   commentAdded: false,
   answerAdded: false,
-  answers: computed('discussion.answers.[]', 'answerAdded', function() {
-    return this.get('discussion.answers');
+  answers: computed('discussion.answers.[]', 'answerAdded', {
+    get() {
+      let discussionId = get(this, 'discussion.id');
+      return get(this, 'store').query('answer', {
+        discussion_id: discussionId
+      });
+    },
+    set(key, value) {
+      return value;
+    }
   }),
   votes: computed('discussion.upvotesCount', 'discussion.downvotesCount', function() {
     return get(this, 'discussion.upvotesCount') - get(this, 'discussion.downvotesCount');
@@ -55,10 +63,6 @@ export default Ember.Component.extend({
         content: content,
       });
       answer.save().then((result) => {
-        let discussion = this.get('discussion.answers');
-        let obj = result.get('data');
-        obj.id = result.get('id');
-        discussion.pushObject(obj);
         this.set('content', null);
         this.toggleProperty('answerAdded');
       }).catch(()=>{

@@ -15,6 +15,12 @@ export default Ember.Component.extend({
   showReply: false,
   replyContent: null,
   replyComment: false,
+  correctAnswerId: computed.reads('discussion.correctAnswerId'),
+  isMarked: computed('answer', 'discussion.correctAnswerId', function() {
+    let answerId = get(this, 'answer.id')
+    let correctAnswerId = get(this, 'discussion.correctAnswerId')
+    return (answerId == correctAnswerId);
+  }),
   replies: computed('answer.[]', 'replyComment', {
     get() {
       let answerId = this.get('answer.id')
@@ -55,6 +61,14 @@ export default Ember.Component.extend({
       currentAnswer.downvote({ discussion_id: discussionId }).then(() => {
         this.incrementProperty('answer.downvotesCount');
         this.handlePreviousVoteState(downvoteActionState);
+      })
+    },
+    markCorrect() {
+      let currentAnswer = get(this, 'answer');
+      let discussionId  = get(this, 'answer.discussionId');
+      let discussion    = get(this, 'discussion');
+      currentAnswer.markCorrect({ discussion_id: discussionId }).then(() => {
+        discussion.setProperties({ correctAnswerId: currentAnswer.id })
       })
     },
     enableReply() {

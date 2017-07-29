@@ -24,5 +24,6 @@ export default Model.extend({
   upvote: memberAction({ path: 'upvote' }),
   downvote: memberAction({ path: 'downvote' }),
   answers: hasMany('answer'),
-  sentiment: attr()
+  sentiment: attr(),
+  correctAnswerId: attr()
 });
