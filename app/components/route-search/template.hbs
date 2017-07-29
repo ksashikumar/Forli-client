@@ -10,9 +10,11 @@
   {{app/app-loader level2=true}}
 {{else}}
   {{#if showResultsCheck}}
-    {{log 'results there' searchResults.discussions}}
     <div class="forum-list-wrapper p-4">
-      {{route-home/forum-list data=searchResults.discussions}}
+      {{#each searchResults.discussions as |item|}}
+        {{route-home/forum-list discussion=item}}
+      {{/each}}
+      {{app/lazy-loading page=page loadMore=(action 'setSearchPage') loadedCount=loadedCount totalCount=totalCount perPage=limit}}
     </div>
   {{else if termPresent}}
     {{app/empty-state emptyText="No results found for your search"}}

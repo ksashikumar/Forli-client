@@ -48,3 +48,74 @@
     transform: scale(1.0);
   }
 }
+
+
+// Shimmer CSS
+
+.loader-shimmer {
+  position: relative;
+  padding: 20px 20px;
+
+  .shine {
+    background: #f6f7f8;
+    background-image: linear-gradient(to right, rgba(209, 209, 209, 0.22) 0%, rgba(0, 0, 0, 0.05) 20%, #f6f7f8 40%, #f6f7f8 100%);
+    background-repeat: no-repeat;
+    background-size: 800px 104px;
+    display: block;
+    position: relative;
+
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: placeholderShimmer;
+    -webkit-animation-timing-function: linear;
+    }
+
+    box {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      position: absolute !important;
+    }
+
+    .spin-item {
+      display: block;
+      background: #FFF;
+      margin-bottom: 15px;
+      padding: 15px;
+
+      .holder {
+        margin-left: 65px;
+        margin-top: -5px;
+        .one {
+          width: 100px;
+        }
+        .two {
+          width: 85%;
+        }
+      }
+    }
+
+    lines {
+      height: 7px;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    photo {
+      display: block!important;
+      width: 325px;
+      height: 100px;
+      margin-top: 15px;
+    }
+
+    @-webkit-keyframes placeholderShimmer {
+      0% {
+        background-position: -468px 0;
+      }
+
+      100% {
+        background-position: 468px 0;
+      }
+    }
+}
