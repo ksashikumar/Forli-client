@@ -1,33 +1,7 @@
-<!--  TODO Need to wrap all content generated through the froala-editor in {{froala-content}} component
-
-      REFER https://www.froala.com/wysiwyg-editor/docs/options
-      http://froala.github.io/ember-froala-editor/#/components/froala-editor
-
--->
-
-{{froala-editor
-  content=content
-  toolbarButtons=(array
-    "bold"
-    "italic"
-    "underline"
-    "strikeThrough"
-    "|"
-    "align"
-    "subscript"
-    "superscript"
-    "quote"
-    "insertLink"
-    "formatOL"
-    "formatUL"
-    "|"
-    "clearFormatting"
-  )
-  options=(hash
-    heightMin=200
-    heightMax=500
-    toolbarInline=toolbarInline
-    direction=direction
-  )
-  update=(action (mut content))
-}}
+<div class="f-editor">
+  {{medium-editor
+      content
+      options=mediumEditorOptions
+      onChange=(action (mut content))
+      class="forli-editor"}}
+</div>

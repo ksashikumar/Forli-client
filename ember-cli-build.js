@@ -26,9 +26,22 @@ module.exports = function(defaults) {
       'importBootstrapCSS': true
     },
 
-    'ember-froala-editor': {
-      languages : true,
-      plugins   : true,
+    mediumEditor: {
+      /**
+      * If true will include only JS in the build.
+      *
+      * @type Boolean
+      * @default false
+      */
+      excludeStyles: false,
+
+      /**
+      * List of themes: https://github.com/yabwe/medium-editor/tree/master/dist/css/themes
+      *
+      * @type String
+      * @default 'default'
+      */
+      theme: 'default'
     }
   });
 

@@ -62,7 +62,7 @@ export default Ember.Component.extend({
         discussionId,
         content: content,
       });
-      answer.save().then((result) => {
+      answer.save().then(() => {
         this.set('content', null);
         this.toggleProperty('answerAdded');
       }).catch(()=>{
