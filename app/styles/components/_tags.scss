@@ -77,3 +77,10 @@ md-chips.md-default-theme .md-chips, md-chips .md-chips {
   color: #fff ;
   font-size: 0.75rem !important;
 }
+
+.tag-count {
+  position: absolute;
+  right: 25px;
+  color: $text-light;
+  font-size: 13px;
+}

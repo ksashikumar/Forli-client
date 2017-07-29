@@ -6,7 +6,7 @@
       <div class="tags-container pt-3">
       {{#each tags as |item|}}
         <div class="tag-detailsList list-tag-{{item.color}}">
-          {{#link-to "home" (query-params tag_ids=item.id) target="_blank"}}{{item.name}}{{/link-to}}
+          {{#link-to "home" (query-params tag_ids=item.id) target="_blank"}}{{item.name}} ({{format-view-count item.count}}){{/link-to}}
         </div>
       {{/each}}
       {{!-- <div class="tag-detailsList list-tag-default"><a href="#">Load More</a></div> --}}

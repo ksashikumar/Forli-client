@@ -10,6 +10,7 @@ export default DS.Model.extend({
   createdAt: attr(),
   updatedAt: attr(),
   name: attr(),
+  count: attr(),
   color: computed('id', function() {
     let id = this.get('id');
     return (id%10).toString();

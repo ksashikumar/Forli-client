@@ -22,6 +22,7 @@
           {{#link-to "home" (query-params tag_ids=item.id)}}
             {{#paper-item class=(if (eq filterId item.id) "tag menu-active" "tag")}}
               <p class="tag-item tag-{{item.color}}">{{item.name}}</p>
+              <span class="tag-count">{{format-view-count item.count}}</span>
             {{/paper-item}}
           {{/link-to}}
         {{/each}}
