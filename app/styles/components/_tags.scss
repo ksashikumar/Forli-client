@@ -80,7 +80,8 @@ md-chips.md-default-theme .md-chips, md-chips .md-chips {
 
 .tag-count {
   position: absolute;
-  right: 25px;
-  color: $text-light;
-  font-size: 13px;
+  right: 1rem;
+  color: rgba($app-primary, 0.5);
+  font-size: 0.75rem;
+  font-weight: 400;
 }
