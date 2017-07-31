@@ -15,7 +15,7 @@ export default Ember.Component.extend({
   content: null,
   relatedQuestions: [],
   globalReplyBox: true,
-  answerData: computed('discussion.answers.[]', {
+  answerData: computed('discussion', {
     get() {
       let discussionId = get(this, 'discussion.id');
       return get(this, 'store').query('answer', {
@@ -39,7 +39,6 @@ export default Ember.Component.extend({
       window.scrollTo(0,0);
       this.getSimilarQuestions();
   },
-
   getSimilarQuestions() {
     let currentDiscussion = this.get('discussion');
     currentDiscussion.similar().then((similarQuestions) => {
@@ -65,9 +64,9 @@ export default Ember.Component.extend({
         discussionId,
         content: comment
       });
-      answer.save().then((result) => {
-        let answers = this.get('answers.content');
-        answers.pushObject(result._internalModel);
+      answer.save().then(() => {
+        // let answers = this.get('answers.content');
+        // answers.pushObject(result._internalModel);
         this.set('content', null);
       }).catch(()=>{
         // console.log('do failure process')
