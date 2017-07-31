@@ -33,17 +33,17 @@
     <div class="flex-80 flex-offset-10">
       <div class="comment-wrapper">
         {{#if (gt discussion.answers.length 0)}}
-        {{#each discussion.answers as |answer|}}
-          {{app/comment-holder commentAdded=commentAdded buttonText="Reply" answer=answer onReply=(action 'submitReply')}}
-        {{/each}}
+          {{#each discussion.answers as |answer|}}
+            {{app/comment-holder commentAdded=commentAdded buttonText="Reply" answer=answer}}
+          {{/each}}
         {{else}}
-        <div class="no-answers">
-          {{#if currentUser.user}}
-            <p>Be the first one to answer!</p>
-          {{else}}
-            <p>Please {{#link-to 'login'}}login{{/link-to}} to answer!</p>
-          {{/if}}
-        </div>
+          <div class="no-answers">
+            {{#if currentUser.user}}
+              <p>Be the first one to answer!</p>
+            {{else}}
+              <p>Please {{#link-to 'login'}}login{{/link-to}} to answer!</p>
+            {{/if}}
+          </div>
         {{/if}}
       </div>
     </div>

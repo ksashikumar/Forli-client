@@ -14,13 +14,24 @@ export default Ember.Component.extend({
   store: service(),
   showReply: false,
   replyContent: null,
-  replyComment: false,
-  replies: computed('answer.[]', 'replyComment', {
+  correctAnswerId: computed.reads('discussion.correctAnswerId'),
+  isMarked: computed('answer', 'discussion.correctAnswerId', function() {
+    let answerId = get(this, 'answer.id')
+    let correctAnswerId = get(this, 'discussion.correctAnswerId')
+    return (answerId == correctAnswerId);
+  }),
+  replyData: computed('answer.[]', {
     get() {
       let answerId = this.get('answer.id')
-      return this.get('store').query('reply', {
+      let replies = this.get('store').query('reply', {
         answer_id: answerId
       });
+      return replies;
+    }
+  }),
+  replies: computed('replyData.content', {
+    get() {
+      return this.get('replyData.content');
     },
     set(key, value) {
       return value
@@ -43,16 +54,26 @@ export default Ember.Component.extend({
   actions: {
     upVote() {
       let currentAnswer = this.get('answer');
-      currentAnswer.upvote().then(() => {
+      let discussionId = this.get('answer.discussionId');
+      currentAnswer.upvote({ discussion_id: discussionId }).then(() => {
         this.incrementProperty('answer.upvotesCount');
         this.handlePreviousVoteState(upvoteActionState);
       })
     },
     downVote() {
       let currentAnswer = this.get('answer');
-      currentAnswer.downvote().then(() => {
+      let discussionId = this.get('answer.discussionId');
+      currentAnswer.downvote({ discussion_id: discussionId }).then(() => {
         this.incrementProperty('answer.downvotesCount');
         this.handlePreviousVoteState(downvoteActionState);
+      })
+    },
+    markCorrect() {
+      let currentAnswer = get(this, 'answer');
+      let discussionId  = get(this, 'answer.discussionId');
+      let discussion    = get(this, 'discussion');
+      currentAnswer.markCorrect({ discussion_id: discussionId }).then(() => {
+        discussion.setProperties({ correctAnswerId: currentAnswer.id })
       })
     },
     enableReply() {
@@ -65,10 +86,10 @@ export default Ember.Component.extend({
         answerId,
         content: comment
       });
-      reply.save().then(() => {
+      reply.save().then((result) => {
+        let replies = this.get('replies.content');
+        replies.pushObject(result._internalModel);
         this.set('replyContent', null);
-        this.toggleProperty('replyComment');
-        // this.get('replies').pushPayload(result);
       }).catch(()=>{
         // console.log('do failure process')
       });

@@ -4,10 +4,16 @@
     <div onClick={{action 'enableReply'}} class="comment-reply-btn">Reply</div>
   </div>
   <div class="answer">
-    <div class="vote-wrapper">
+    <div class="vote-wrapper info-left">
       {{app/vote-holder votes=votes voteAction=answer.voteAction upVote=(action 'upVote') downVote=(action 'downVote')}}
+      {{!-- TODO : Should check if currentUser is author of discussion --}}
+      <div data-balloon="Mark Correct" data-balloon-pos="up" class="correct {{if isMarked 'selected'}}" onclick={{action "markCorrect"}}>
+        {{paper-icon "done" size=24}}
+      </div>
     </div>
-    {{answer.content}}
+    <div class="info-right">
+      {{answer.content}}
+    </div>
   </div>
   {{#if replies}}
     <div class="reply-wrapper">

@@ -8,7 +8,7 @@
   box-shadow: 5px 10px 15px 5px rgba(96, 97, 190, .1);
   margin-top: 68px; // to offset fixed header
   overflow-y: scroll;
-  &.sidebar-state-index {
+  &.sidebar-state-home {
     box-shadow: none;
     display: block;
   }
@@ -88,6 +88,9 @@ md-list-item .md-list-item-inner>p {
     color: $text-grey-dark;
     border-color: $text-grey-dark;
     font-weight: 600;
+  }
+  .tag-count {
+    color: $text-grey-dark;
   }
 }
 

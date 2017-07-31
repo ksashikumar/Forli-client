@@ -1,7 +1,9 @@
 <div class="tag-container {{class}}">
   {{#if (gt tagList.length 0) }}
   {{#each tagList as |tag|}}
-    <div class="tag text-semibold list-tag-{{mod tag.id 10}}">{{tag.name}}</div>
+    {{#link-to "home" (query-params tag_ids=tag.id)}}
+      <div class="tag text-semibold list-tag-{{mod tag.id 10}}">{{tag.name}}</div>
+    {{/link-to}}
   {{/each}}
   {{else}}
     <div class="tag tag-disabled text-semibold">Untagged</div>

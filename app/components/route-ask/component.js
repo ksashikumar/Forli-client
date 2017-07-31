@@ -12,6 +12,7 @@ export default Component.extend({
   editorContent: '',
   tagList: ['JavaScript', 'HTML', 'CSS'],
   tags: [],
+  title: '',
   init() {
     this._super(...arguments);
     this.set('tags', []);
