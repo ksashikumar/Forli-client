@@ -23,7 +23,7 @@ module.exports = function(defaults) {
     'ember-bootstrap': {
       'bootstrapVersion': 3,
       'importBootstrapFont': true,
-      'importBootstrapCSS': true
+      'importBootstrapCSS': true,
     },
 
     mediumEditor: {
@@ -44,6 +44,8 @@ module.exports = function(defaults) {
       theme: 'default'
     }
   });
+
+  app.import('vendor/bootstrap/dropdown.js');
 
   // Use `app.import` to add additional libraries to the generated
   // output files.

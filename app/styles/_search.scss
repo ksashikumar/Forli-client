@@ -13,7 +13,7 @@ $app-search-width: 30rem;
 
 .quick-search-wrapper {
   position: absolute;
-  top: 28px;
+  top: 49px;
   width: $quick-search-width;
   height: 300px;
   color: $text-grey-dark;
@@ -44,7 +44,9 @@ $app-search-width: 30rem;
   }
 }
 
-.app-search-input{
-  margin: 30px 15px;
+.app-search-input {
   width: $app-search-width;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: block;
 }

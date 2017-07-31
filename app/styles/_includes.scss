@@ -4,6 +4,7 @@
 @import "discussion";
 @import "tags-list";
 @import "search";
+@import "login";
 
 // Components files included here
 @import "components/global-header";
@@ -24,3 +25,5 @@
 @import "components/tooltip";
 @import "components/lazy-loading";
 @import "components/forli-editor";
+@import "components/drop-down";
+@import "components/animation";

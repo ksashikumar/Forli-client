@@ -2,6 +2,7 @@ $primary: "blue";
 $accent: "indigo";
 $warn: "red";
 
+@import "ember-bootstrap/bootstrap";
 @import "common/font-family";
 @import "common/variables";
 @import 'ember-paper';
