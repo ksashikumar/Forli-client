@@ -14,19 +14,24 @@ export default Ember.Component.extend({
   store: service(),
   showReply: false,
   replyContent: null,
-  replyComment: false,
   correctAnswerId: computed.reads('discussion.correctAnswerId'),
   isMarked: computed('answer', 'discussion.correctAnswerId', function() {
     let answerId = get(this, 'answer.id')
     let correctAnswerId = get(this, 'discussion.correctAnswerId')
     return (answerId == correctAnswerId);
   }),
-  replies: computed('answer.[]', 'replyComment', {
+  replyData: computed('answer.[]', {
     get() {
       let answerId = this.get('answer.id')
-      return this.get('store').query('reply', {
+      let replies = this.get('store').query('reply', {
         answer_id: answerId
       });
+      return replies;
+    }
+  }),
+  replies: computed('replyData.content', {
+    get() {
+      return this.get('replyData.content');
     },
     set(key, value) {
       return value
@@ -81,10 +86,10 @@ export default Ember.Component.extend({
         answerId,
         content: comment
       });
-      reply.save().then(() => {
+      reply.save().then((result) => {
+        let replies = this.get('replies.content');
+        replies.pushObject(result._internalModel);
         this.set('replyContent', null);
-        this.toggleProperty('replyComment');
-        // this.get('replies').pushPayload(result);
       }).catch(()=>{
         // console.log('do failure process')
       });

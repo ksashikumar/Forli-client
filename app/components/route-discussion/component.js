@@ -14,17 +14,20 @@ export default Ember.Component.extend({
   content: null,
   relatedQuestions: [],
   globalReplyBox: true,
-  commentAdded: false,
-  answerAdded: false,
-  answers: computed('discussion.answers.[]', 'answerAdded', {
+  answerData: computed('discussion.answers.[]', {
     get() {
       let discussionId = get(this, 'discussion.id');
       return get(this, 'store').query('answer', {
         discussion_id: discussionId
       });
+    }
+  }),
+  answers: computed('answerData.content', {
+    get() {
+      return this.get('answerData.content');
     },
     set(key, value) {
-      return value;
+      return value
     }
   }),
   votes: computed('discussion.upvotesCount', 'discussion.downvotesCount', function() {
@@ -55,28 +58,16 @@ export default Ember.Component.extend({
     this.set('discussion.voteAction', actionState);
   },
   actions: {
-    submitAnswer(content) {
-      this.set('answerAdded', false);
+    submitAnswer(comment) {
       let discussionId = this.get('discussion.id');
       let answer = this.get('store').createRecord('answer', {
         discussionId,
-        content: content,
-      });
-      answer.save().then(() => {
-        this.set('content', null);
-        this.toggleProperty('answerAdded');
-      }).catch(()=>{
-        // console.log('do failure process')
-      });
-    },
-    submitReply(comment, answerId) {
-      let reply = this.get('store').createRecord('reply', {
-        answerId,
         content: comment
       });
-      reply.save().then(() => {
+      answer.save().then((result) => {
+        let answers = this.get('answers.content');
+        answers.pushObject(result._internalModel);
         this.set('content', null);
-        this.toggleProperty('answerAdded');
       }).catch(()=>{
         // console.log('do failure process')
       });

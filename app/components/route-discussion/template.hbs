@@ -33,11 +33,11 @@
     <div class="flex-80 flex-offset-10">
       <div class="comment-wrapper">
         {{#if answers}}
-        {{#each answers as |answer|}}
-          {{app/comment-holder commentAdded=commentAdded buttonText="Reply" answer=answer discussion=discussion onReply=(action 'submitReply')}}
-        {{/each}}
+          {{#each answers as |answer|}}
+            {{app/comment-holder commentAdded=commentAdded buttonText="Reply" answer=answer discussion=discussion}}
+          {{/each}}
         {{else}}
-        <div class="no-answers"><p>Be the first one to answer!</p></div>
+          <div class="no-answers"><p>Be the first one to answer!</p></div>
         {{/if}}
       </div>
     </div>
