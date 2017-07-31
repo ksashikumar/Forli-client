@@ -22,7 +22,13 @@
           </div>
           <div class="flex">
             <div class="btn-wrapper text-right">
-              {{#paper-button raised=true onClick=(action "basicSubmitAction") class="m-0" primary=true}}Ask question{{/paper-button}}
+              {{#if title}}
+                {{#paper-button raised=true onClick=(action "basicSubmitAction") class="m-0" primary=true}}Ask question{{/paper-button}}
+              {{else}}
+                <div class="display-inline" data-balloon="Please add Title" data-balloon-pos="left">
+                  <span class="disable-button" >{{#paper-button raised=true class="m-0" primary=true}}Ask question{{/paper-button}}</span>
+                </div>
+              {{/if}}
             </div>
           </div>
         </div>
