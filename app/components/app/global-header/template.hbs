@@ -21,11 +21,9 @@
       {{/paper-button}}
     {{/link-to}}
     {{#if currentUser.user}}
-      <div class="dropdown">
+      <div class="dropdown user-pic-holder">
         <div class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{#paper-button iconButton=true}}
-            {{paper-icon "account_circle"}}
-          {{/paper-button}}
+          {{app/avatar-holder src=currentUser.user.image name=currentUser.user.name class="md-avatar"}}
         </div>
         <div class="dropdown-menu profile-dropdown" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" onClick={{action "logout"}}>Logout</a>
