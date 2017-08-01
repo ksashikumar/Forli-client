@@ -30,7 +30,7 @@
         <div class="no-data-t">Tags not available!!!</div>
       {{/if}}
     {{else}}
-      {{app/app-loader level1=true}}
+      {{app/shimmer-tags}}
     {{/if}}
     {{#if (gt meta.count limit)}}
       {{#paper-item class="text-link pt-1"}}{{#link-to 'tag-list'}}..more{{/link-to}}{{/paper-item}}
