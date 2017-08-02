@@ -1,15 +1,22 @@
 <div class="comment">
   <div class="author-wrapper">
     {{app/author-bio user=answer.user timestamp=answer.created_at}}
-    <div onClick={{action 'enableReply'}} class="comment-reply-btn">Reply</div>
+    {{#if currentUser.user}}
+      <div onClick={{action 'enableReply'}} class="comment-reply-btn">Reply</div>
+    {{/if}}
   </div>
   <div class="answer">
     <div class="vote-wrapper info-left">
       {{app/vote-holder votes=votes voteAction=answer.voteAction upVote=(action 'upVote') downVote=(action 'downVote')}}
-      {{!-- TODO : Should check if currentUser is author of discussion --}}
-      <div data-balloon="Mark Correct" data-balloon-pos="up" class="correct {{if isMarked 'selected'}}" onclick={{action "markCorrect"}}>
-        {{paper-icon "done" size=24}}
-      </div>
+      {{#if showMarkCorrect}}
+        <div data-balloon="Mark Correct" data-balloon-pos="up" class="correct {{if isMarked 'selected'}}" onclick={{action "markCorrect"}}>
+          {{paper-icon "done" size=24}}
+        </div>
+      {{else if isMarked}}
+        <div data-balloon="Marked Correct" data-balloon-pos="up" class="correct selected">
+          {{paper-icon "done" size=24}}
+        </div>
+      {{/if}}
     </div>
     <div class="info-right">
       {{answer.content}}

@@ -12,6 +12,7 @@ const downvoteActionState = 1;
 
 export default Ember.Component.extend({
   store: service(),
+  currentUser: service('current-user'),
   showReply: false,
   replyContent: null,
   correctAnswerId: computed.reads('discussion.correctAnswerId'),
@@ -19,6 +20,11 @@ export default Ember.Component.extend({
     let answerId = get(this, 'answer.id')
     let correctAnswerId = get(this, 'discussion.correctAnswerId')
     return (answerId == correctAnswerId);
+  }),
+  showMarkCorrect: computed('discussion', function() {
+    let discussionAuthorId = get(this, 'discussion.user.id');
+    let currentUserId = get(this, 'currentUser.user.id');
+    return (currentUserId == discussionAuthorId);
   }),
   replyData: computed('answer.[]', {
     get() {
