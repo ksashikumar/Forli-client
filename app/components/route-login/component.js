@@ -8,6 +8,8 @@ const { service } = Ember.inject;
 
 export default Component.extend({
   session: service('session'),
+  email: "test@forli.com",
+  password: "testtest",
   emailValidation: [{
     message: 'Please provide email in a valid format',
     validate: (inputValue) => {
