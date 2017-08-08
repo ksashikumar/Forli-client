@@ -2,11 +2,10 @@
   .forli-editor {
     min-height: 200px;
     background: #FFF;
-    border: 1px solid #dadfe3;
+    border: 1px solid darken($app-bg, 10%);
     border-radius: 4px;
-    font-size: 1.25rem;
+    font-size: 1rem;
     padding: 0.5rem;
-    font-weight: 600;
     outline: none;
 
     p {

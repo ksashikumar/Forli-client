@@ -54,7 +54,7 @@ md-icon.md-default-theme, md-icon {
   margin: 0 auto;
   padding-top: 68px;  // to offset fixed header
   margin-bottom: 2rem;
-  min-height: 40rem; // footer fix
+  min-height: calc(100vh - 30px); // footer fix
 }
 
 .router-home {
