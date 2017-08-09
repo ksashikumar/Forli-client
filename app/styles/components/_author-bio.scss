@@ -10,8 +10,8 @@
     padding-left: 0px;
   }
   .avatar-holder {
-    width: 50px;
-    height: 50px;
+    width: 50px !important;
+    height: 50px !important;
     margin-right: 1rem;
     border-radius: 50%;
     img {
@@ -21,10 +21,10 @@
   .avatar-initial {
     color: #FFF;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1rem !important;
     font-weight: 600;
+    line-height: 50px !important;
     background-image: linear-gradient(135deg, lighten( $app-primary, 15%), lighten( $app-secondary, 15%));
-    line-height: 50px;
   }
   md-list-item.md-2-line .md-list-item-text,
   md-list-item.md-2-line>.md-no-style .md-list-item-text {
