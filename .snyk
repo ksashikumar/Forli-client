@@ -1,0 +1,8 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.8.0
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:minimatch:20160620':
+    - ember-cli-sass > ember-cli-babel > broccoli-babel-transpiler > babel-core > minimatch:
+        patched: '2017-11-17T07:18:09.320Z'
