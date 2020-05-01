@@ -12,7 +12,9 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test"
+    "test": "ember test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "active-model-adapter": "^2.1.1",
@@ -62,6 +64,8 @@
   },
   "private": true,
   "dependencies": {
-    "ember-cli-sass": "^7.0.0"
-  }
+    "ember-cli-sass": "^7.0.0",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
